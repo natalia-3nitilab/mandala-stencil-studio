@@ -162,14 +162,15 @@ class Feat:
         self.group = group
 
     def rotated(self, deg):
-        f = Feat(self.kind, rot(self.geom, deg), self.color, self.size, [rot(Point(b), deg).coords[0] for b in self.bridges], self.group)
+        br = [rot(b, deg) if hasattr(b, "geom_type") else rot(Point(b), deg).coords[0] for b in self.bridges]
+        f = Feat(self.kind, rot(self.geom, deg), self.color, self.size, br, self.group)
         return f
 
     def cut(self):
         if self.kind == "chan":
             g = self.geom.buffer(LINE_SLOT / 2, quad_segs=24)
-            for b in self.bridges:
-                g = g.difference(bridge_poly(self.geom, b))
+            for b in self.bridges:   # a point -> bridge across the path; a polygon -> used as is
+                g = g.difference(b if hasattr(b, "geom_type") else bridge_poly(self.geom, b))
             return g
         if self.kind == "hole":
             return self.geom.buffer(TIP_R, join_style="mitre", mitre_limit=3.0)

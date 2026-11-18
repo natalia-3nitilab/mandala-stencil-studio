@@ -213,18 +213,21 @@ def build_insert(pid, name, feats, positions, rim=0.9, label=None, clip_lines=Tr
 # ---------------------------------------------------------------------------
 # WEDGE PLATES (click onto the hub's outer notches)
 # ---------------------------------------------------------------------------
-def wedge_outline(cuts, teeth, rmax, margin=4.0):
+def wedge_outline(cuts, teeth, rmax, margin=4.0, clip=None):
     pcs = [cuts.buffer(margin, quad_segs=8)]
     for ph in teeth:
         pcs.append(sector(R_HUB, R_HUB + 14, ph - 7, ph + 7))
     hull = unary_union(pcs).convex_hull
-    return hull.intersection(disk(rmax, q=256)).difference(disk(R_HUB + CLR, q=256))
+    hull = hull.intersection(disk(rmax, q=256))
+    if clip is not None:
+        hull = hull.intersection(clip)
+    return hull.difference(disk(R_HUB + CLR, q=256))
 
 
-def build_wedge(pid, name, feats, teeth, rmax, positions, order, label=None):
+def build_wedge(pid, name, feats, teeth, rmax, positions, order, label=None, clip=None):
     part = Part(pid, name, "wedge", feats, positions, order)
     cuts = unary_union([f.cut() for f in feats])
-    outline = wedge_outline(cuts, teeth, rmax)
+    outline = wedge_outline(cuts, teeth, rmax, clip=clip)
     body = outline.difference(cuts)
     check_body(part, body)
     tee = unary_union([outer_tooth(ph) for ph in teeth])
@@ -286,12 +289,14 @@ def build_corner(pid, name, feats, half, L, positions, order, label=None):
 # ---------------------------------------------------------------------------
 # CENTRE JIG (per canvas size) — printed upside down
 # ---------------------------------------------------------------------------
-def build_jig(pid, name, half, label):
+def build_jig(pid, name, half, label, wall=6.0, open_far=False):
     """half = distance canvas corner -> centre along each axis (mm)."""
     part = Part(pid, name, "jig", flip=True)
     cx = cy = half
     ring_in = R_HUB + 0.25
-    ring = annulus(ring_in, ring_in + 6.0).buffer(0)
+    ring = annulus(ring_in, ring_in + wall).buffer(0)
+    if open_far:   # C-shaped cradle: 200 deg of ring facing the corner still traps the hub
+        ring = ring.difference(sector(0, ring_in + wall + 5, 45 - 80, 45 + 80)).buffer(1.0).buffer(-1.0)
     ring = affinity.translate(ring, cx, cy)
     # diagonal beam from corner to ring
     d = np.array([1, 1]) / math.sqrt(2)

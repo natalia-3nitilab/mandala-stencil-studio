@@ -124,3 +124,48 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ============================================================ Kit 02 (30 cm)
+def main_kit2():
+    import design02 as d2
+    H2 = d2.HALF
+    kit = d2.build_kit()
+    hub = plate_body(kit["H1"])
+    ALL = d2.CENTRE + d2.OUTER
+    S = 1.8
+    for name, pal in (("P2_turquoise", "turquoise"), ("P2_moonlight", "moonlight")):
+        L = d2.painting_layers(kit, include=ALL)
+        frame(name, L, pal=pal, s=2.2, half=H2)
+        PALETTE.update(PALETTES[pal])
+        png_from_layers(os.path.join(HERE, "preview", name + ".png"), L, H2, px=2400)
+    PALETTE.update(PALETTES["turquoise"])
+
+    labs = [(P(H2 - 7, 45 * k)[0], P(H2 - 7, 45 * k)[1], str(k + 1), 13) for k in range(8)]
+    lines_c = ("F1", "C", "A1", "B1")
+    J = kit["J30"]
+    jig = affinity.translate(J.outline, -J.half, -J.half)
+    edge = box(-H2, -H2, H2, H2).exterior.buffer(0.8)
+
+    def fr(name, include, positions=None, overlays=(), lab=()):
+        L = d2.painting_layers(kit, include=include, positions=positions)
+        return frame(name, L, overlays, lab, s=S, half=H2)
+
+    fr("k2_s1_hub", (), overlays=[jig, hub])
+    fr("k2_s2_centre", lines_c, overlays=[hub])
+    fr("k2_s3_E1", lines_c + ("E1",), {"E1": ["1", "3", "5", "7"]}, [hub, placed(kit["E1"], 45)], labs)
+    fr("k2_s4_P2", lines_c + ("E1", "P2"), {"P2": ["1", "3"]}, [hub, placed(kit["P2"], 180)], labs)
+    fr("k2_s5_S1", lines_c + ("E1", "P2", "S1"), {"S1": ["2", "4"]}, [hub, placed(kit["S1"], 225)], labs)
+    fr("k2_s6_S2", lines_c + ("E1", "P2", "S1", "S2"), {"S2": ["2", "4", "6"]}, [hub, placed(kit["S2"], 315)], labs)
+    fr("k2_s7_D2", lines_c + ("E1", "P2", "S1", "S2", "H1", "F2", "D1", "D2"), {"D2": ["1", "3", "5"]},
+       [placed(kit["D2"], 270)], labs)
+    fr("k2_s8_P3", lines_c + ("E1", "P2", "S1", "S2", "H1", "F2", "D1", "D2", "P3"), {"P3": ["1", "3", "5"]},
+       [placed(kit["P3"], 270)], labs)
+    kp = d2.corner_to_canvas(plate_body(kit["K2"]), 180)
+    fr("k2_s9_K2", ALL, {"K2": ["BL", "TL"]}, [kp])
+    fr("k2_s10_done", ALL)
+    print("kit 2 frames ok")
+
+
+if __name__ == "__main__":
+    main_kit2()

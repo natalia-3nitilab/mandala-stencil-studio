@@ -164,8 +164,14 @@ def layer_D():
     mid = (DOME_R + ECHO_R) / 2
     keep_out = unary_union([petal(), petal_m()]).buffer(2.4)
     apex = Point(P(C1 + DOME_R, 0.0))
+    trail = []
     for a in arcs_where(DOME_C, mid, lambda p: rad(p) >= R_HUB + 3.2 and not keep_out.contains(Point(p))):
-        f += dots_along(a, 3.7, "S", "gold", "dometrail", skip=lambda p: apex.distance(Point(p)) < 3.0)
+        trail += dots_along(a, 3.7, "S", "gold", "dometrail", skip=lambda p: apex.distance(Point(p)) < 3.0)
+    # where two neighbouring domes meet, their trails would put dots on top of each other:
+    # drop a dot if it clashes with the trail of the next dome (+45 deg) so one of each pair stays
+    nxt = [rot(t.geom, 45.0) for t in trail]
+    gap = DOT_S + 0.9
+    f += [t for t in trail if all(t.geom.distance(q) >= gap for q in nxt)]
     # dots in the petal band (between outer and inner petal)
     band = petal().buffer(-INNER_OFF / 2, join_style="mitre", mitre_limit=5).exterior
     tips = [Point(P(PETAL_IN, PETAL_PHI)), Point(P(PETAL_OUT, PETAL_PHI))]

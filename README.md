@@ -2,9 +2,11 @@
 
 3D-printed stencils for painting precise sacred-geometry mandalas with acrylic markers. No compass, no pencil drafting: every stencil clicks onto one hub at the canvas centre, so every line and every dot lands where it should.
 
-![Kit 01 Seed Bloom, simulated painting](preview/P1_turquoise.png)
+| Kit 01 "Seed Bloom", 20 cm | Kit 02 "Turquoise Bloom", 30 cm |
+|---|---|
+| ![Kit 01 Seed Bloom, simulated painting](preview/P1_turquoise.png) | ![Kit 02 Turquoise Bloom, simulated painting](preview/P2_turquoise.png) |
 
-**Status:** Phase 0 (calibration) and Phase 1 (Kit 01 "Seed Bloom", 20 × 20 cm) are designed and generated. All STLs are checked closed solids, and a virtual assembly test passes (22/22). They have not been test-printed or painted yet. Phase 2 (30 × 30 cm "Turquoise Bloom") is in progress.
+**Status:** Phase 0 (calibration), Phase 1 (Kit 01 "Seed Bloom", 20 × 20 cm) and Phase 2 (Kit 02 "Turquoise Bloom", 30 × 30 cm) are designed and generated. All 17 STLs are checked closed solids. A virtual assembly and paint-overlap test passes 41/41. Nothing has been test-printed or painted yet.
 
 ## How the system works
 - **Hub (H1):** a 108 mm ring held at the canvas centre with a little removable putty. It has 48 outer notches (one every 7.5°) and 6 inner notches.
@@ -42,13 +44,31 @@ PLA or PETG · 0.4 mm nozzle · 0.2 mm layers · 100 % infill · no supports · 
 
 The full illustrated guide is in [`book/index.html`](book/index.html) (open it locally in a browser).
 
+## Kit 02 "Turquoise Bloom" (30 × 30 cm / 12 × 12 in)
+Reuses H1, F1, F2, A1, B1 and D1 from Kit 01 for the centre and adds:
+
+| # | File | Part | Used |
+|---|------|------|------|
+| 10 | `stl/10_J30_centre_jig_30cm_12in.stl` | Centre Jig 30 cm / 12 in (202 mm, prints lips up) | once |
+| 11 | `stl/11_E1_plate_E_rainbow_fans.stl` | Rainbow fans on ring C2 | 8× |
+| 12 | `stl/12_D2_plate_D2_ring_border_dots.stl` | Ring C2 + fan dots + border dots | 8× |
+| 13 | `stl/13_P2_plate_P2_great_petals.stl` | Great teardrop petals | positions 1 3 5 7 |
+| 14 | `stl/14_P3_plate_P3_petal_dots.stl` | Petal dots + bridge dots | positions 1 3 5 7 |
+| 15 | `stl/15_S1_plate_S1_star_circles.stl` | Star circles + rim dots | positions 2 4 6 8 |
+| 16 | `stl/16_S2_plate_S2_echo_star_field.stl` | Echo circle + star field | positions 2 4 6 8 |
+| 17 | `stl/17_K2_corner_fan_30cm.stl` | Corner fan (prints lips up) | 4 corners |
+
+About 87 g and 6 hours of printing. Every plate fits a 180 mm bed except J30. Without J30, measure instead: the hub's outer edge sits 96 mm from each canvas edge (98 mm on 12 in).
+
+Order: hub with J30 → Seed Bloom lines (F1, hub circles, A, B) → E1 → P2 → S1 → S2 → centre dots (hub, F2, D1) → D2 (glide ring C2 first) → P3 → K2. About 1,700 dots and 4 to 4½ hours.
+
 ## Your markers are a different size?
 Print the Fit Card, find your sizes, then rebuild everything:
 
 ```bash
 python3 -m venv .venv && . .venv/bin/activate
 pip install shapely numpy manifold3d trimesh matplotlib
-python3 make_kit.py --line 2.0 --dot-s 2.4 --dot-m 3.2   # STLs + fit check
+python3 make_kit.py --line 2.0 --dot-s 2.4 --dot-m 3.2   # both kits: STLs + fit and overlap check
 python3 guide_assets.py                                  # previews + instruction frames
 ```
 
@@ -58,13 +78,14 @@ Defaults: 1.8 mm line channel (PC-3M class), 2.2 mm small-dot hole, 3.0 mm big-d
 - `geom.py`: marker profile, plate settings, hub dimensions, geometry helpers
 - `parts.py`: hub, inserts, wedge plates, corner plates, centre jig, fit card (2D slabs extruded with manifold3d)
 - `design01.py`: the Seed Bloom design (radii, petals, rays, dot layout)
-- `make_kit.py`: builds the STLs and runs the virtual fit check
+- `design02.py`: the Turquoise Bloom outer ring (fans, great petals, star circles, corners)
+- `make_kit.py`: builds the STLs and runs the virtual fit check and the paint-overlap check
 - `guide_assets.py`, `render.py`: simulated paintings and step-by-step frames
 
 ## Roadmap
 - **Phase 0, Calibrate:** Fit Card and your marker profile. *Done.*
 - **Phase 1, Kit 01 "Seed Bloom" (20 cm):** core system and the first full kit. *Done, waiting for a test print.*
-- **Phase 2, Kit 02 "Turquoise Bloom" (30 cm / 12 in):** outer plates on the same hub. *In progress.*
+- **Phase 2, Kit 02 "Turquoise Bloom" (30 cm / 12 in):** outer plates on the same hub. *Done, waiting for a test print.*
 - **Phase 3, Library:** Seed of Life, Metatron's Cube and Sri Yantra-style inserts, plus 6-, 12- and 16-fold rings.
 - **Phase 4, Kits:** numbered parts, instruction cards, wear tests, beginner testing, packaging.
 
