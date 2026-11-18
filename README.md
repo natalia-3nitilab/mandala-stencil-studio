@@ -6,7 +6,7 @@
 |---|---|
 | ![Kit 01 Seed Bloom, simulated painting](preview/P1_turquoise.png) | ![Kit 02 Turquoise Bloom, simulated painting](preview/P2_turquoise.png) |
 
-**Status:** Phase 0 (calibration), Phase 1 (Kit 01 "Seed Bloom", 20 × 20 cm) and Phase 2 (Kit 02 "Turquoise Bloom", 30 × 30 cm) are designed and generated. All 17 STLs are checked closed solids. A virtual assembly and paint-overlap test passes 41/41. Nothing has been test-printed or painted yet.
+**Status:** Phase 0 (calibration), Phase 1 (Kit 01 "Seed Bloom", 20 × 20 cm) and Phase 2 (Kit 02 "Turquoise Bloom", 30 × 30 cm) are designed and generated. All 17 STLs are checked closed solids. A virtual assembly and paint-overlap test passes 41/41. Nothing has been test-printed or painted yet. A v2 prototype (below) reworks the system after the first review.
 
 ## How the system works
 - **Hub (H1):** a 108 mm ring held at the canvas centre with a little removable putty. It has 48 outer notches (one every 7.5°) and 6 inner notches.
@@ -43,6 +43,27 @@ PLA or PETG · 0.4 mm nozzle · 0.2 mm layers · 100 % infill · no supports · 
 8. Peel the hub off, touch up, let it cure 24 h, then spray varnish.
 
 The full illustrated guide is in [`book/index.html`](book/index.html) (open it locally in a browser).
+
+## v2 prototype: reversible, one motif per piece, edges draw
+After the first review the system was rethought. Prototype files are in `stl/v2/`:
+
+| File | Part |
+|------|------|
+| `stl/v2/v2_01_H2_hub_reversible.stl` | Hub v2: index notches in the middle of the thickness |
+| `stl/v2/v2_02_DM_dome_piece.stl` | Dome piece: edge = arc, notched edge = pearls, 8 slots → 16 rays |
+| `stl/v2/v2_03_PT_petal_piece.stl` | Petal piece: edge = petal, opening = inner petal, half the pearls per face |
+| `stl/v2/v2_04_F1_flower_of_life_lines.stl` | Flower of Life lines, flippable |
+| `stl/v2/v2_05_F2_flower_of_life_dots.stl` | Flower of Life dots, flippable |
+| `stl/v2/v2_06_SF_sunflower_core.stl` | Sunflower core: 222 dots on golden-angle spirals |
+
+- **Locks on both faces:** teeth and notches sit in the middle band (z 0.6–1.4 mm), so a piece clicks in face A up or flipped to face B. Flipping mirrors the piece about the hub number.
+- **One motif per piece**, and the **outer edge is a drawing guide**: trace around the piece.
+- **Face A + face B complete each other:** half arc + half pearls per face, interleaved rays, the petal arm on opposite flanks.
+- **Rule for every piece:** at each hub number, face A, flip, face B.
+
+Fit check: `python3 v2_check.py` (36/36 pass). Previews: `python3 v2_render.py`. v1 plates do not fit the v2 hub.
+
+![v2 prototype painting](preview/v2_painting_fol.png)
 
 ## Kit 02 "Turquoise Bloom" (30 × 30 cm / 12 × 12 in)
 Reuses H1, F1, F2, A1, B1 and D1 from Kit 01 for the centre and adds:

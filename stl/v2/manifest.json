@@ -1,0 +1,262 @@
+{
+ "H2": {
+  "watertight": true,
+  "volume_cm3": 6.94,
+  "size_mm": [
+   108.0,
+   108.0,
+   2.0
+  ],
+  "triangles": 255570,
+  "genus_ok": true,
+  "file": "v2_01_H2_hub_reversible.stl",
+  "warnings": []
+ },
+ "DM": {
+  "watertight": true,
+  "volume_cm3": 1.36,
+  "size_mm": [
+   46.3,
+   31.4,
+   2.0
+  ],
+  "triangles": 23496,
+  "genus_ok": true,
+  "file": "v2_02_DM_dome_piece.stl",
+  "warnings": []
+ },
+ "PT": {
+  "watertight": true,
+  "volume_cm3": 1.07,
+  "size_mm": [
+   61.4,
+   34.5,
+   2.0
+  ],
+  "triangles": 34896,
+  "genus_ok": true,
+  "file": "v2_03_PT_petal_piece.stl",
+  "warnings": []
+ },
+ "F1": {
+  "watertight": true,
+  "volume_cm3": 6.16,
+  "size_mm": [
+   79.7,
+   80.8,
+   2.0
+  ],
+  "triangles": 128382,
+  "genus_ok": true,
+  "file": "v2_04_F1_flower_of_life_lines.stl",
+  "warnings": []
+ },
+ "F2": {
+  "watertight": true,
+  "volume_cm3": 8.89,
+  "size_mm": [
+   79.7,
+   80.8,
+   2.0
+  ],
+  "triangles": 226540,
+  "genus_ok": true,
+  "file": "v2_05_F2_flower_of_life_dots.stl",
+  "warnings": []
+ },
+ "SF": {
+  "watertight": true,
+  "volume_cm3": 7.15,
+  "size_mm": [
+   79.7,
+   80.8,
+   2.0
+  ],
+  "triangles": 527594,
+  "genus_ok": true,
+  "file": "v2_06_SF_sunflower_core.stl",
+  "warnings": []
+ },
+ "_checks": [
+  {
+   "name": "DM face A at 0",
+   "pass": true,
+   "detail": "overlap 0.0000, seated=True"
+  },
+  {
+   "name": "DM face A at 45",
+   "pass": true,
+   "detail": "overlap 0.0000, seated=True"
+  },
+  {
+   "name": "DM face A half-notch off",
+   "pass": true,
+   "detail": "blocked 2.466 mm3"
+  },
+  {
+   "name": "DM face B at 0",
+   "pass": true,
+   "detail": "overlap 0.0000, seated=True"
+  },
+  {
+   "name": "DM face B at 45",
+   "pass": true,
+   "detail": "overlap 0.0000, seated=True"
+  },
+  {
+   "name": "DM face B half-notch off",
+   "pass": true,
+   "detail": "blocked 2.466 mm3"
+  },
+  {
+   "name": "PT face A at 0",
+   "pass": true,
+   "detail": "overlap 0.0000, seated=True"
+  },
+  {
+   "name": "PT face A at 45",
+   "pass": true,
+   "detail": "overlap 0.0000, seated=True"
+  },
+  {
+   "name": "PT face A half-notch off",
+   "pass": true,
+   "detail": "blocked 2.466 mm3"
+  },
+  {
+   "name": "PT face B at 0",
+   "pass": true,
+   "detail": "overlap 0.0000, seated=True"
+  },
+  {
+   "name": "PT face B at 45",
+   "pass": true,
+   "detail": "overlap 0.0000, seated=True"
+  },
+  {
+   "name": "PT face B half-notch off",
+   "pass": true,
+   "detail": "blocked 2.466 mm3"
+  },
+  {
+   "name": "F1 face A @0",
+   "pass": true,
+   "detail": "overlap 0.0000"
+  },
+  {
+   "name": "F1 face A @60",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "F1 face A @120",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "F1 face A between notches",
+   "pass": true,
+   "detail": "blocked 0.887"
+  },
+  {
+   "name": "F1 face B @0",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "F1 face B @60",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "F1 face B @120",
+   "pass": true,
+   "detail": "overlap 0.0000"
+  },
+  {
+   "name": "F1 face B between notches",
+   "pass": true,
+   "detail": "blocked 0.887"
+  },
+  {
+   "name": "F2 face A @0",
+   "pass": true,
+   "detail": "overlap 0.0000"
+  },
+  {
+   "name": "F2 face A @60",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "F2 face A @120",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "F2 face A between notches",
+   "pass": true,
+   "detail": "blocked 0.887"
+  },
+  {
+   "name": "F2 face B @0",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "F2 face B @60",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "F2 face B @120",
+   "pass": true,
+   "detail": "overlap 0.0000"
+  },
+  {
+   "name": "F2 face B between notches",
+   "pass": true,
+   "detail": "blocked 0.887"
+  },
+  {
+   "name": "SF face A @0",
+   "pass": true,
+   "detail": "overlap 0.0000"
+  },
+  {
+   "name": "SF face A @60",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "SF face A @120",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "SF face A between notches",
+   "pass": true,
+   "detail": "blocked 0.887"
+  },
+  {
+   "name": "SF face B @0",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "SF face B @60",
+   "pass": true,
+   "detail": "overlap -0.0000"
+  },
+  {
+   "name": "SF face B @120",
+   "pass": true,
+   "detail": "overlap 0.0000"
+  },
+  {
+   "name": "SF face B between notches",
+   "pass": true,
+   "detail": "blocked 0.887"
+  }
+ ]
+}
