@@ -1,0 +1,665 @@
+{
+ "T0": {
+  "watertight": true,
+  "volume_cm3": 15.54,
+  "size_mm": [
+   118.0,
+   74.0,
+   2.0
+  ],
+  "triangles": 47452,
+  "genus_ok": true,
+  "file": "00_T0_fit_card.stl",
+  "name": "Fit Card",
+  "warnings": [],
+  "positions": [
+   "1"
+  ],
+  "order": [
+   "1"
+  ]
+ },
+ "J20": {
+  "watertight": true,
+  "volume_cm3": 12.97,
+  "size_mm": [
+   163.4,
+   163.4,
+   6.5
+  ],
+  "triangles": 11842,
+  "genus_ok": true,
+  "file": "01_J20_centre_jig_20cm_8in.stl",
+  "name": "Centre Jig 20 cm / 8 in",
+  "warnings": [],
+  "positions": [
+   "1"
+  ],
+  "order": [
+   "1"
+  ]
+ },
+ "H1": {
+  "watertight": true,
+  "volume_cm3": 6.84,
+  "size_mm": [
+   108.0,
+   108.0,
+   2.0
+  ],
+  "triangles": 228074,
+  "genus_ok": true,
+  "file": "02_H1_hub.stl",
+  "name": "Hub (anchor ring)",
+  "warnings": [],
+  "positions": [
+   "1"
+  ],
+  "order": [
+   "1"
+  ]
+ },
+ "F1": {
+  "watertight": true,
+  "volume_cm3": 6.1,
+  "size_mm": [
+   79.7,
+   80.8,
+   2.0
+  ],
+  "triangles": 115206,
+  "genus_ok": true,
+  "file": "03_F1_flower_of_life_lines.stl",
+  "name": "Flower of Life \u2014 lines",
+  "warnings": [],
+  "positions": [
+   "A",
+   "B",
+   "C"
+  ],
+  "order": [
+   "A",
+   "B",
+   "C"
+  ]
+ },
+ "F2": {
+  "watertight": true,
+  "volume_cm3": 8.85,
+  "size_mm": [
+   79.7,
+   80.8,
+   2.0
+  ],
+  "triangles": 204956,
+  "genus_ok": true,
+  "file": "04_F2_flower_of_life_dots.stl",
+  "name": "Flower of Life \u2014 dots",
+  "warnings": [],
+  "positions": [
+   "A"
+  ],
+  "order": [
+   "A"
+  ]
+ },
+ "A1": {
+  "watertight": true,
+  "volume_cm3": 3.62,
+  "size_mm": [
+   85.9,
+   46.7,
+   2.0
+  ],
+  "triangles": 103018,
+  "genus_ok": true,
+  "file": "05_A1_plate_A_domes_petals.stl",
+  "name": "Plate A \u2014 domes + petals",
+  "warnings": [],
+  "positions": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "order": [
+   "1",
+   "3",
+   "5",
+   "7",
+   "2",
+   "4",
+   "6",
+   "8"
+  ]
+ },
+ "B1": {
+  "watertight": true,
+  "volume_cm3": 4.01,
+  "size_mm": [
+   81.8,
+   43.1,
+   2.0
+  ],
+  "triangles": 57934,
+  "genus_ok": true,
+  "file": "06_B1_plate_B_rays_inner_petals.stl",
+  "name": "Plate B \u2014 rays + inner petals",
+  "warnings": [],
+  "positions": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "order": [
+   "1",
+   "3",
+   "5",
+   "7",
+   "2",
+   "4",
+   "6",
+   "8"
+  ]
+ },
+ "D1": {
+  "watertight": true,
+  "volume_cm3": 5.41,
+  "size_mm": [
+   83.8,
+   49.8,
+   2.0
+  ],
+  "triangles": 92760,
+  "genus_ok": true,
+  "file": "07_D1_plate_D_dots.stl",
+  "name": "Plate D \u2014 dot trails",
+  "warnings": [],
+  "positions": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "order": [
+   "1",
+   "3",
+   "5",
+   "7",
+   "2",
+   "4",
+   "6",
+   "8"
+  ]
+ },
+ "K1": {
+  "watertight": true,
+  "volume_cm3": 2.8,
+  "size_mm": [
+   44.4,
+   44.4,
+   5.5
+  ],
+  "triangles": 120852,
+  "genus_ok": true,
+  "file": "08_K1_corner_web.stl",
+  "name": "Corner web",
+  "warnings": [],
+  "positions": [
+   "BL",
+   "TL",
+   "TR",
+   "BR"
+  ],
+  "order": [
+   "BL",
+   "TL",
+   "TR",
+   "BR"
+  ]
+ },
+ "J30": {
+  "watertight": true,
+  "volume_cm3": 13.37,
+  "size_mm": [
+   202.1,
+   202.1,
+   6.5
+  ],
+  "triangles": 17070,
+  "genus_ok": true,
+  "file": "10_J30_centre_jig_30cm_12in.stl",
+  "name": "Centre Jig 30 cm / 12 in",
+  "warnings": [],
+  "positions": [
+   "1"
+  ],
+  "order": [
+   "1"
+  ]
+ },
+ "E1": {
+  "watertight": true,
+  "volume_cm3": 6.69,
+  "size_mm": [
+   69.5,
+   82.0,
+   2.0
+  ],
+  "triangles": 170122,
+  "genus_ok": true,
+  "file": "11_E1_plate_E_rainbow_fans.stl",
+  "name": "Plate E \u2014 rainbow fans",
+  "warnings": [],
+  "positions": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "order": [
+   "1",
+   "3",
+   "5",
+   "7",
+   "2",
+   "4",
+   "6",
+   "8"
+  ]
+ },
+ "D2": {
+  "watertight": true,
+  "volume_cm3": 9.14,
+  "size_mm": [
+   86.0,
+   85.7,
+   2.0
+  ],
+  "triangles": 137164,
+  "genus_ok": true,
+  "file": "12_D2_plate_D2_ring_border_dots.stl",
+  "name": "Plate D2 \u2014 ring + border dots",
+  "warnings": [],
+  "positions": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "order": [
+   "1",
+   "3",
+   "5",
+   "7",
+   "2",
+   "4",
+   "6",
+   "8"
+  ]
+ },
+ "P2": {
+  "watertight": true,
+  "volume_cm3": 7.73,
+  "size_mm": [
+   67.0,
+   100.9,
+   2.0
+  ],
+  "triangles": 29568,
+  "genus_ok": true,
+  "file": "13_P2_plate_P2_great_petals.stl",
+  "name": "Plate P2 \u2014 great petals",
+  "warnings": [],
+  "positions": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "order": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ]
+ },
+ "P3": {
+  "watertight": true,
+  "volume_cm3": 8.34,
+  "size_mm": [
+   67.0,
+   100.9,
+   2.0
+  ],
+  "triangles": 97480,
+  "genus_ok": true,
+  "file": "14_P3_plate_P3_petal_dots.stl",
+  "name": "Plate P3 \u2014 petal dots",
+  "warnings": [],
+  "positions": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "order": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ]
+ },
+ "S1": {
+  "watertight": true,
+  "volume_cm3": 8.82,
+  "size_mm": [
+   67.0,
+   111.2,
+   2.0
+  ],
+  "triangles": 80774,
+  "genus_ok": true,
+  "file": "15_S1_plate_S1_star_circles.stl",
+  "name": "Plate S1 \u2014 star circles",
+  "warnings": [],
+  "positions": [
+   "2",
+   "4",
+   "6",
+   "8"
+  ],
+  "order": [
+   "2",
+   "4",
+   "6",
+   "8"
+  ]
+ },
+ "S2": {
+  "watertight": true,
+  "volume_cm3": 12.03,
+  "size_mm": [
+   67.0,
+   113.3,
+   2.0
+  ],
+  "triangles": 205410,
+  "genus_ok": true,
+  "file": "16_S2_plate_S2_echo_star_field.stl",
+  "name": "Plate S2 \u2014 echo + star field",
+  "warnings": [],
+  "positions": [
+   "2",
+   "4",
+   "6",
+   "8"
+  ],
+  "order": [
+   "2",
+   "4",
+   "6",
+   "8"
+  ]
+ },
+ "K2": {
+  "watertight": true,
+  "volume_cm3": 3.83,
+  "size_mm": [
+   54.3,
+   54.3,
+   5.5
+  ],
+  "triangles": 197410,
+  "genus_ok": true,
+  "file": "17_K2_corner_fan_30cm.stl",
+  "name": "Corner fan 30 cm",
+  "warnings": [],
+  "positions": [
+   "BL",
+   "TL",
+   "TR",
+   "BR"
+  ],
+  "order": [
+   "BL",
+   "TL",
+   "TR",
+   "BR"
+  ]
+ },
+ "_checks": [
+  {
+   "name": "A1 at hub 1",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "A1 at hub 2",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "A1 half-notch off",
+   "pass": true,
+   "detail": "blocked, overlap 3.390 mm3"
+  },
+  {
+   "name": "B1 at hub 1",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "B1 at hub 2",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "B1 half-notch off",
+   "pass": true,
+   "detail": "blocked, overlap 3.390 mm3"
+  },
+  {
+   "name": "D1 at hub 1",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "D1 at hub 2",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "D1 half-notch off",
+   "pass": true,
+   "detail": "blocked, overlap 3.390 mm3"
+  },
+  {
+   "name": "F1 in hub @0",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3"
+  },
+  {
+   "name": "F1 in hub @60",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3"
+  },
+  {
+   "name": "F1 in hub @120",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3"
+  },
+  {
+   "name": "F1 ear between notches",
+   "pass": true,
+   "detail": "blocked, overlap 1.220 mm3"
+  },
+  {
+   "name": "F2 in hub @0",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3"
+  },
+  {
+   "name": "F2 in hub @60",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3"
+  },
+  {
+   "name": "F2 in hub @120",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3"
+  },
+  {
+   "name": "F2 ear between notches",
+   "pass": true,
+   "detail": "blocked, overlap 1.220 mm3"
+  },
+  {
+   "name": "J20 around hub",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3"
+  },
+  {
+   "name": "J20 tooth keys the hub",
+   "pass": true,
+   "detail": "half-notch turn blocked, overlap 1.695 mm3"
+  },
+  {
+   "name": "Kit 01 dots clear of other paint",
+   "pass": true,
+   "detail": "0 unintended overlaps "
+  },
+  {
+   "name": "E1 at hub 1",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "E1 at hub 2",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "E1 half-notch off",
+   "pass": true,
+   "detail": "blocked, overlap 3.390 mm3"
+  },
+  {
+   "name": "D2 at hub 1",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "D2 at hub 2",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "D2 half-notch off",
+   "pass": true,
+   "detail": "blocked, overlap 3.390 mm3"
+  },
+  {
+   "name": "P2 at hub 1",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "P2 at hub 3",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "P2 half-notch off",
+   "pass": true,
+   "detail": "blocked, overlap 3.390 mm3"
+  },
+  {
+   "name": "P3 at hub 1",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "P3 at hub 3",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "P3 half-notch off",
+   "pass": true,
+   "detail": "blocked, overlap 3.390 mm3"
+  },
+  {
+   "name": "S1 at hub 2",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "S1 at hub 4",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "S1 half-notch off",
+   "pass": true,
+   "detail": "blocked, overlap 3.390 mm3"
+  },
+  {
+   "name": "S2 at hub 2",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "S2 at hub 4",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3, seated=True"
+  },
+  {
+   "name": "S2 half-notch off",
+   "pass": true,
+   "detail": "blocked, overlap 3.390 mm3"
+  },
+  {
+   "name": "J30 around hub",
+   "pass": true,
+   "detail": "overlap 0.0000 mm3"
+  },
+  {
+   "name": "J30 tooth keys the hub",
+   "pass": true,
+   "detail": "half-notch turn blocked, overlap 1.695 mm3"
+  },
+  {
+   "name": "Kit 02 dots clear of other paint",
+   "pass": true,
+   "detail": "0 unintended overlaps "
+  }
+ ],
+ "_profile": {
+  "LINE_SLOT": 1.8,
+  "DOT_S": 2.2,
+  "DOT_M": 3.0,
+  "T": 2.0
+ }
+}

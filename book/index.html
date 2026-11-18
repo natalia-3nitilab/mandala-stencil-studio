@@ -147,330 +147,301 @@ footer { padding-block: 32px 48px; color: var(--muted); font-size: .85rem; }
   .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
   .fact b { font-size: 1.2rem; }
 }
+
+.mixer { display:grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: 24px; align-items: start; }
+.stage { position: relative; aspect-ratio: 1 / 1; border-radius: 6px; overflow: hidden; box-shadow: var(--shadow); background: var(--mx-bg, #0b0f14); max-width: 100%; }
+.stage > div { position: absolute; inset: 0; }
+.stage svg { width: 100%; height: 100%; display: block; }
+.stage .ln { fill: var(--mx-line, #3fd6d0); } .stage .dw { fill: var(--mx-white, #f4efe2); } .stage .dg { fill: var(--mx-gold, #f2c45a); }
+.controls { display: grid; gap: 16px; }
+.controls fieldset { border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; display: grid; gap: 6px; margin: 0; }
+.controls legend { font: 500 .74rem/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 0 4px; }
+.controls label { display: flex; gap: 8px; align-items: center; font-size: .92rem; cursor: pointer; }
+.controls .parts-used { font-family: var(--f-mono); font-size: .8rem; color: var(--muted); }
+.gallery { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.gallery figure { margin: 0; display: grid; gap: 4px; }
+.gallery figcaption { font-size: .78rem; color: var(--muted); }
+.pill { font: 500 .72rem/1 var(--f-mono); padding: 4px 7px; border-radius: 999px; background: var(--surface-2); color: var(--muted); }
+@media (max-width: 900px) { .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); } .mixer { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 </style>
 
-<nav class="bar" aria-label="Sections">
-  <div class="wrap">
-    <span class="brand">Stencil Studio</span>
-    <a href="#v2">v2 rethink</a>
-    <a href="#system">System</a>
-    <a href="#phases">Phases</a>
-    <a href="#first">Print order</a>
-    <a href="#parts">Kit 01 parts</a>
-    <a href="#paintings">Paintings</a>
-    <a href="#steps">Step by step</a>
-    <a href="#rules">Alignment rules</a>
-    <a href="#calibrate">Fit Card</a>
-    <a href="#print">Print settings</a>
-    <a href="#kit02">Kit 02 · 30 cm</a>
-  </div>
-</nav>
+<nav class="bar" aria-label="Sections"><div class="wrap">
+<span class="brand">Stencil Studio</span>
+<a href="#how">How it works</a><a href="#phases">Phases</a><a href="#print">Printing</a><a href="#kit01">Kit 01</a>
+<a href="#kit02">Kit 02</a><a href="#library">Library</a><a href="#mixer">Mixer</a><a href="#rules">Rules</a><a href="#files">Files</a>
+</div></nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="copy">
-      <span class="eyebrow">Sacred geometry · acrylic marker · 3D printed</span>
-      <h1>Mandala Stencil Studio</h1>
-      <p class="lede">A stencil system that lets you paint a precise sacred-geometry mandala with acrylic markers, with no compass and no pencil drafting. Everything clicks onto one hub, so every line and every dot lands where it should.</p>
-      <p>Kit 01, <b>Seed Bloom</b>, is the first full kit: a Flower of Life core, a dotted ring, eight sunburst domes, eight petals and corner webs on a 20 × 20 cm (or 8 × 8 in) canvas. Kit 02, <a href="#kit02"><b>Turquoise Bloom</b></a>, grows it to 30 × 30 cm with eight more parts.</p>
-      <div class="facts">
-        <div class="fact"><b>9</b><span>printed parts, about 82 g of PLA</span></div>
-        <div class="fact"><b>~2 h</b><span>to paint, plus short drying pauses</span></div>
-        <div class="fact"><b>640</b><span>dots, every one placed by a hole</span></div>
-      </div>
-    </div>
-    <figure class="canvas" style="margin:0">
-      <img src="img/P1_turquoise.svg" alt="Simulated painting of Kit 01 Seed Bloom: turquoise Flower of Life core, gold and white dotted rings, eight sunburst domes, eight dotted petals and four corner webs on a black canvas." width="600" height="600">
-    </figure>
-  </div>
-</header>
+<header class="hero"><div class="wrap">
+<div class="copy">
+<span class="eyebrow">Sacred geometry · acrylic marker · 3D printed · v3</span>
+<h1>Mandala Stencil Studio</h1>
+<p class="lede">3D-printed stencils for precise sacred-geometry mandalas in acrylic marker, with no compass and no pencil. Every piece locks onto one hub, does one motif, and draws with its edges, its openings and its grooved dot rows.</p>
+<p>v3 is a rework after your review. The lock now uses solid V-teeth. Every wall is at least 1.6 mm. Dots are lines with pockets. Everything prints flat with no supports.</p>
+<div class="facts">
+<div class="fact"><b>37</b><span>printable parts across 2 kits and a library</span></div>
+<div class="fact"><b>130/130</b><span>fit, path, wall, line and dot checks pass</span></div>
+<div class="fact"><b>10</b><span>recipes from 5 centres × 2 rings</span></div>
+</div></div>
+<figure class="canvas" style="margin:0"><img src="img3/k1_turquoise.svg" alt="Kit 01 Seed Bloom v3: 19-circle Flower of Life, dotted hub band, 16-ray domes, pearl petals, corner webs" width="600" height="600"></figure>
+</div></header>
 
-<section id="v2">
-  <div class="wrap">
-    <span class="eyebrow">Rethink · v2 prototype · built from your feedback</span>
-    <h2>Every piece works on both faces, does one motif, and draws with its edges</h2>
-    <p class="lede">v1 combined several motifs on one plate, locked into the hub from one face only, and drew every line through slots. v2 is a working prototype of the dome and the petal, rebuilt the new way. If you like it, Kits 01, 02 and the library get converted next.</p>
-    <div class="rules">
-      <div class="rule"><b>Locks on both faces</b><p>The hub’s 48 notches are now in the middle of its thickness, and every piece has its teeth in the same middle band. Face A down or flipped to face B, the teeth still click in. Flipping mirrors the piece about the hub number.</p></div>
-      <div class="rule"><b>One motif per piece</b><p>The dome piece only makes domes and the petal piece only makes petals. Pieces are small (10–15 minutes each to print) and you combine them however you like.</p></div>
-      <div class="rule"><b>The outer edge draws</b><p>Run the marker around the outside of the dome piece and you get the dome arc. No channel, no bridge, no gap to fill.</p></div>
-      <div class="rule"><b>Face A + face B complete each other</b><p>Dome: A traces the left half of the arc and pearls the right, B the reverse. Its 8 ray slots, flipped, interleave into 16 rays. Petal: the arm that holds it blocks a bit of outline on one flank, and B’s arm sits on the other flank.</p></div>
-      <div class="rule"><b>Dots, rethought</b><p>Pearl combs are notches cut into an edge: push the tip into each notch. Dots are split between the faces, so none is ever made twice. A golden-angle sunflower centre gives 222 dots in spirals.</p></div>
-      <div class="rule"><b>One rule for every piece</b><p>At each hub number: face A, lift, flip, face B. Then the next number.</p></div>
-    </div>
-    <div class="two">
-      <figure style="margin:0; display:grid; gap:8px"><img src="img/v2_cross_section.svg" alt="Side view: the hub rim has a notch in its middle band; the piece's tooth sits in that band, so it fits face A up or flipped to face B up." loading="lazy"><figcaption class="muted">Side view. The tooth sits in the middle band, so flipping keeps it in the notch.</figcaption></figure>
-      <figure style="margin:0; display:grid; gap:8px"><img src="img/v2_lock_detail.svg" alt="Top view zoomed on the hub rim: the dome piece's two gold teeth sit in the hub's hidden notches." loading="lazy"><figcaption class="muted">Top view at hub number 1. The gold teeth sit in the hub’s hidden notches (dashed).</figcaption></figure>
-    </div>
-    <div class="two">
-      <figure style="margin:0; display:grid; gap:8px"><div class="part" style="grid-template-rows:auto"><img src="img/v2_piece_DM.svg" alt="Dome piece: face A (grey) with the comb on the right and face B (blue) flipped with the comb on the left" loading="lazy"></div><figcaption class="muted"><b>DM dome piece.</b> Face A (grey) and face B (blue, flipped). Smooth edge = arc, notched edge = pearls, slots = rays, centre cut-out = sun.</figcaption></figure>
-      <figure style="margin:0; display:grid; gap:8px"><div class="part" style="grid-template-rows:auto"><img src="img/v2_piece_PT.svg" alt="Petal piece: face A and face B, with the arm on opposite flanks" loading="lazy"></div><figcaption class="muted"><b>PT petal piece.</b> Outer edge = petal, inner opening = inner petal, holes = half the pearl ring per face. The foot carries the teeth.</figcaption></figure>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="canvas"><img src="img/v2_s1_domeA.svg" alt="Dome piece face A clicked in at hub number 1, teeth in gold" loading="lazy" width="520" height="520"></div><h3>Dome, face A at 1</h3><ul><li>Slide in until both gold teeth click.</li><li>Trace the smooth edge, glide the 8 slots and the sun, dot the notches.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/v2_s2_domeB.svg" alt="Dome piece flipped to face B at hub number 1" loading="lazy" width="520" height="520"></div><h3>Flip: face B at 1</h3><ul><li>Same number. The other half of the arc and pearls, and 8 more rays between the first ones.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/v2_s3_domes.svg" alt="All eight domes done" loading="lazy" width="520" height="520"></div><h3>Domes at 2 … 8</h3><ul><li>A then B at every number.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/v2_s4_petalA.svg" alt="Petal piece face A at number 1" loading="lazy" width="520" height="520"></div><h3>Petal, face A at 1</h3><ul><li>Trace around the outside of the petal, then inside its opening. Dot the holes.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/v2_s5_petalB.svg" alt="Petal piece flipped to face B at number 2, closing the first petal" loading="lazy" width="520" height="520"></div><h3>Flip: face B</h3><ul><li>At number 2, face B closes the petal face A started at number 1. Its arm is on the other flank.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/v2_s6_done.svg" alt="Finished v2 painting" loading="lazy" width="520" height="520"></div><h3>Done</h3><ul><li>16-ray domes, pearl rings, closed petals, and not one dot made twice.</li></ul></div>
-    </div>
-    <div class="paintings" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
-      <figure class="painting" style="margin:0"><div class="canvas"><img src="img/v2_painting_fol.svg" alt="v2 painting with the Flower of Life centre" width="600" height="600"></div><h3>v2 · Flower of Life centre</h3><p>Hub v2, F1 and F2 (now flippable too), dome piece and petal piece.</p></figure>
-      <figure class="painting" style="margin:0"><div class="canvas"><img src="img/v2_painting_sunflower.svg" alt="v2 painting with the golden-angle sunflower dot centre" width="600" height="600"></div><h3>v2 · Sunflower centre</h3><p>Swap F1/F2 for the SF insert: 222 dots on golden-angle spirals.</p></figure>
-    </div>
-    <p class="muted">Prototype files in <span class="mono">stl/v2/</span>: H2 hub, DM dome, PT petal, F1, F2 and SF. All six are closed solids, and the fit check passes 36/36 on both faces. v1 plates do not fit the v2 hub.</p>
-  </div>
-</section>
+<section id="how"><div class="wrap">
+<span class="eyebrow">How it works</span>
+<h2>One hub. Every piece locks on, works on both faces, and draws with its edges</h2>
+<div class="rules">
+<div class="rule"><b>Solid V-teeth</b><p>The hub has a V-notch every 7.5° (48 around the outside, 6 inside). Pieces have full-height V-teeth, 3.6 mm wide. They drop in and lift straight up, can’t turn, and print as plain solid triangles.</p></div>
+<div class="rule"><b>Both faces</b><p>A tooth is the same top and bottom, so every piece also works flipped. Face B draws the mirror image: the other half of an arc, rays between rays, the petal on the other side of the number.</p></div>
+<div class="rule"><b>Lanes, not notched edges</b><p>The hub’s notched edges are never traced. The ring around the hub is traced in a 2.6 mm gap between the hub and the ring piece. A centre’s border is traced in a 2.4 mm gap between the insert and the hub. Face A and face B tabs never cover the same spot, so both circles close.</p></div>
+<div class="rule"><b>Edges and openings draw</b><p>Trace around a piece for its outline, inside an opening for an inner shape. Round holes give perfect circles: the Flower of Life is now the classic 19 circles, every one a whole opening.</p></div>
+<div class="rule"><b>Dots: a line with pockets</b><p>Dot holes are linked by a 0.6 mm groove on each face. Glide the tip along the groove and press at each pocket. Edge notches work the same way along a rim.</p></div>
+<div class="rule"><b>Strong and printable</b><p>Every wall is at least 1.6 mm (4 nozzle lines), checked automatically. Parts print flat on either face with no supports. Jigs and corner pieces print lips up.</p></div>
+</div>
+<div class="two">
+<figure style="margin:0;display:grid;gap:8px"><img src="img3/v3_lock.svg" alt="Top view: two gold V-teeth of the dome piece sitting in V-notches of the hub" loading="lazy"><figcaption class="muted">Top view at hub number 1: the dome’s two gold V-teeth in the hub notches.</figcaption></figure>
+<figure style="margin:0;display:grid;gap:8px"><img src="img3/v3_section.svg" alt="Side views: full-height tooth beside the hub; groove with pockets" loading="lazy"><figcaption class="muted">Side views: a full-height tooth (no layers), and a dot row as a groove with pockets.</figcaption></figure>
+</div>
+</div></section>
 
-<section id="system">
-  <div class="wrap">
-    <span class="eyebrow">How it works</span>
-    <h2>One hub, and every stencil clicks onto it</h2>
-    <div class="system">
-      <figure class="canvas" style="margin:0">
-        <img src="img/system.svg" alt="Top view: the hub ring at the centre with the Flower of Life insert inside it and wedge plate A clicked onto its outer notches." width="640" height="640">
-      </figure>
-      <div class="principles">
-        <div class="principle"><span class="k">H</span><div><h3>The hub is the anchor</h3><p>A 108 mm ring sits at the canvas centre, held by a rice grain of removable putty in each of the three pockets underneath. It has 48 notches on the outside (one every 7.5°) and 6 on the inside. Wedge plates hook two teeth into the outside notches. Inserts drop into the middle and key into the inside notches. The hub never moves until the painting is done.</p></div></div>
-        <div class="principle"><span class="k">48</span><div><h3>48 notches = any symmetry</h3><p>7.5° steps divide evenly into 6, 8, 12, 16, 24 and 48 repeats. Kit 01 uses 8-fold for the wedges and 6-fold for the Flower of Life. Later kits reuse the same hub.</p></div></div>
-        <div class="principle"><span class="k">3</span><div><h3>Three kinds of opening</h3><p><b>Channels</b> are narrow slots the marker tip glides along. <b>Openings</b> are shapes you trace around the inside wall. <b>Dot holes</b> take the tip straight down. Every opening is offset by the tip radius, so the paint lands on the true geometry.</p></div></div>
-        <div class="principle"><span class="k">•</span><div><h3>Bridges hide under dots</h3><p>A closed curve would make its middle fall out, so the stencil keeps a 1 mm bridge in it. Every bridge sits exactly where the dot plate later puts a dot, so no gap shows.</p></div></div>
-        <div class="principle"><span class="k">1·3</span><div><h3>Odd positions, then even</h3><p>Go 1-3-5-7, then 2-4-6-8. Neighbouring placements overlap a little, so skipping one gives the paint a few minutes to dry before the plate touches that area again.</p></div></div>
-        <div class="legend"><span><i style="background:#cfd5dc"></i>printed part</span><span><i style="background:#3fd6d0"></i>line colour</span><span><i style="background:#f2c45a"></i>big dots</span><span><i style="background:#f4efe2"></i>small dots</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="phases"><div class="wrap">
+<span class="eyebrow">The long project</span>
+<h2>Phases</h2>
+<div class="phases">
+<article class="phase"><div class="tag"><b>0</b><span class="chip">Ready to print</span></div><div class="body"><h3>Calibrate</h3><ul><li>Print the Fit Card (T0), test each marker in its channels and holes, and note your sizes.</li><li>Print the hub and one dome piece to feel the lock before printing the rest.</li></ul></div></article>
+<article class="phase"><div class="tag"><b>1</b><span class="chip">Ready to print · v3</span></div><div class="body"><h3>Kit 01 “Seed Bloom”, 20 cm</h3><ul><li>Hub, jig, the 19-circle Flower of Life (5 inserts), hub ring, dome, petal, corner.</li></ul></div></article>
+<article class="phase"><div class="tag"><b>2</b><span class="chip">Ready to print · v3</span></div><div class="body"><h3>Kit 02 “Turquoise Bloom”, 30 cm</h3><ul><li>Kit 01’s centre plus ring C2, rainbow fans, great petals and hearts, star discs and halos, corner fans.</li></ul></div></article>
+<article class="phase"><div class="tag"><b>3</b><span class="chip">Ready to print · v3</span></div><div class="body"><h3>Library</h3><ul><li>Centres: Sunflower, Merkaba, Seed of Life, Metatron’s Cube. A second ring set: Lace.</li><li>10 recipes and a mixer to try any combination.</li></ul></div></article>
+<article class="phase"><div class="tag"><b>4</b><span class="chip later">Later</span></div><div class="body"><h3>Kits for other people</h3><ul><li>Test prints, wear tests, beginner tests, instruction cards, packaging.</li></ul></div></article>
+<article class="phase"><div class="tag"><b>5</b><span class="chip later">Queued</span></div><div class="body"><h3>Ukrainian stitching</h3><ul><li>Stencils for vyshyvanka-style patterns, then a mandala that combines the Flower of Life with Ukrainian stitching.</li></ul></div></article>
+</div></div></section>
 
-<section id="phases">
-  <div class="wrap">
-    <span class="eyebrow">The long project</span>
-    <h2>Five phases from first test print to a kit you can sell</h2>
-    <p class="lede">Each phase ends with a painting and a clear test before the next one starts. Phases 0 and 1 are built: the STL files are ready. Phases 2 to 4 are planned on the same hub, so nothing you print now becomes obsolete.</p>
-    <div class="phases">
-      <article class="phase"><div class="tag"><b>0</b><span class="chip">Ready to print</span></div><div class="body">
-        <h3>Calibrate: one evening</h3>
-        <ul><li>Print the Fit Card and test each marker you own in its channels and dot holes.</li><li>Write down your “marker profile”: channel width, small-dot hole, big-dot hole.</li><li>Practise gliding, tracing and dotting on black card. Try the bridge-and-dot trick on the arc.</li><li>If your numbers differ from the defaults, regenerate the kit with one command.</li></ul>
-        <p class="exit">Done when: your fine marker glides with no wobble and no catching, and your dots come out round.</p></div></article>
-      <article class="phase"><div class="tag"><b>1</b><span class="chip">Ready to print</span></div><div class="body">
-        <h3>Core system + Kit 01 “Seed Bloom” (20 cm)</h3>
-        <ul><li>Hub, Centre Jig, Flower of Life line and dot inserts, wedge plates A, B and D, corner plate K.</li><li>Paint Seed Bloom, then a second one in another palette or with fewer plates.</li><li>Note the time for each step, any smudges and any misaligned joins.</li></ul>
-        <p class="exit">Done when: two finished paintings, joins under 0.5 mm, no smudges, under 2.5 hours each.</p></div></article>
-      <article class="phase"><div class="tag"><b>2</b><span class="chip">Ready to print</span></div><div class="body">
-        <h3>Kit 02 “Turquoise Bloom” (30 cm / 12 in), the dense hero piece</h3>
-        <ul><li>Reuses the hub, inserts and plates A, B and D in the middle.</li><li>Eight new parts out to 148 mm: ring C2 with border dots, rainbow fans, great teardrop petals on the axes, star circles with star fields on the diagonals, large corner fans, and a 30 cm jig.</li><li>About 1,700 dots, all placed by holes.</li></ul>
-        <p class="exit">Done when: the 30 cm painting reads as dense as the reference and the outer plates still fit a 180 mm print bed.</p></div></article>
-      <article class="phase"><div class="tag"><b>3</b><span class="chip later">Later</span></div><div class="body">
-        <h3>Library: mix-and-match cores and rings</h3>
-        <ul><li>New inserts: Seed of Life, Metatron’s Cube, Sri Yantra-style triangles, Merkaba star, Egg of Life.</li><li>New wedge families: 6-fold, 12-fold and 16-fold rings that click onto the same hub.</li><li>A recipe book: 6 to 10 paintings built from different combinations of the same parts.</li></ul>
-        <p class="exit">Done when: any core plus any two rings makes a balanced mandala.</p></div></article>
-      <article class="phase"><div class="tag"><b>4</b><span class="chip later">Later</span></div><div class="body">
-        <h3>Kits for other people</h3>
-        <ul><li>Number every part, make a printed instruction card per kit, add a QR code to a short video.</li><li>Durability: 50-painting wear test in PETG; check tolerances on 3 or 4 printer brands.</li><li>Have 3 to 5 beginners paint with no help. Fix whatever they get stuck on.</li><li>Bill of materials, packaging, pricing, and a workshop format.</li></ul>
-        <p class="exit">Done when: a beginner finishes a kit painting with only the card.</p></div></article>
-    </div>
-  </div>
-</section>
+<section id="print"><div class="wrap">
+<span class="eyebrow">Printing</span>
+<h2>Flat, no supports</h2>
+<div class="two"><div class="tbl"><table><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody>
+<tr><td>Material</td><td>PLA to start, PETG for pieces you use a lot</td></tr>
+<tr><td>Nozzle / layer</td><td class="num">0.4 mm / 0.2 mm</td></tr>
+<tr><td>Infill</td><td>100% (2 mm parts)</td></tr><tr><td>Supports / brim</td><td>None / off</td></tr>
+<tr><td>Orientation</td><td>As in the files: flat, either face down. J20, J30, K1, K2 print lips up.</td></tr>
+<tr><td>Elephant foot compensation</td><td class="num">0.1–0.15 mm</td></tr></tbody></table></div>
+<div style="display:grid;gap:10px;align-content:start">
+<p>Kit 01: about <b>60 cm³ (74 g)</b>. Kit 02 adds <b>34 cm³</b>. The library adds <b>104 cm³</b>.</p>
+<p>Print the hub and one dome first. If the teeth feel tight, lower the flow 2–3%. If loose, raise it.</p>
+<p class="muted">Every file is a closed solid. The build script checks every piece on both faces: seated with no overlap, a clear straight path down and up, locked against turning and sliding, walls ≥ 1.6 mm, every line closed, and no dot on another element’s paint.</p>
+</div></div></div></section>
 
-<section id="first">
-  <div class="wrap">
-    <span class="eyebrow">Which stencils first</span>
-    <h2>Print in this order</h2>
-    <p class="lede">Each step teaches one skill and gives you something to paint before the next print finishes.</p>
-    <ol class="order">
-      <li><div><h3>T0 Fit Card</h3><p>Everything depends on how your markers fit. Twenty minutes of testing here saves reprinting the whole kit.</p></div></li>
-      <li><div><h3>H1 Hub + J20 Centre Jig</h3><p>The backbone. Without the hub nothing else registers. The jig puts it in the centre in a few seconds.</p></div></li>
-      <li><div><h3>F1 + F2 Flower of Life inserts</h3><p>Teach tracing and dotting. Hub + F1 + F2 already make a finished small piece, so you can paint while the plates print.</p></div></li>
-      <li><div><h3>A1 → B1 → D1 wedge plates</h3><p>The layered method: A is structure, B is detail, D is dots. Print A first and paint it before printing B. You will learn the click-in alignment on the simplest plate.</p></div></li>
-      <li><div><h3>K1 Corner plate</h3><p>Finishes a square canvas. It hooks onto the canvas corner, so it needs no hub.</p></div></li>
-    </ol>
-  </div>
-</section>
+<section id="kit01"><div class="wrap">
+<span class="eyebrow">Phase 1 · 20 × 20 cm / 8 × 8 in</span>
+<h2>Kit 01 · Seed Bloom</h2>
+<div class="paintings" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+<figure class="painting" style="margin:0"><div class="canvas"><img src="img3/k1_turquoise.svg" alt="Seed Bloom, turquoise" width="560" height="560"></div><h3>Turquoise</h3></figure>
+<figure class="painting" style="margin:0"><div class="canvas"><img src="img3/k1_moonlight.svg" alt="Seed Bloom, moonlight" width="560" height="560"></div><h3>Moonlight</h3></figure>
+</div>
+<div class="parts"><article class="part"><div class="pic"><img src="img3/part_H3.svg" alt="Hub drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>H3</code><h3>Hub</h3></div><p></p>
+<dl><dt>use</dt><dd>once</dd><dt>size</dt><dd>108 × 108 mm · one face</dd>
+<dt>print</dt><dd>~40 min · 8 g</dd><dt>file</dt><dd>01_H3_hub.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_J20.svg" alt="Centre jig 20 cm / 8 in drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>J20</code><h3>Centre jig 20 cm / 8 in</h3></div><p></p>
+<dl><dt>use</dt><dd>once</dd><dt>size</dt><dd>166 × 166 mm · prints lips up</dd>
+<dt>print</dt><dd>~80 min · 15 g</dd><dt>file</dt><dd>02_J20_jig_20cm_8in.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_FA.svg" alt="Flower of Life: outer corners drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>FA</code><h3>Flower of Life: outer corners</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at notch 1</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~40 min · 7 g</dd><dt>file</dt><dd>10_FA_flower_corners.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_FB.svg" alt="Flower of Life: inner ring drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>FB</code><h3>Flower of Life: inner ring</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at notch 1·2·3</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~50 min · 10 g</dd><dt>file</dt><dd>11_FB_flower_inner_ring.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_FC.svg" alt="Flower of Life: outer sides drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>FC</code><h3>Flower of Life: outer sides</h3></div><p></p>
+<dl><dt>use</dt><dd>A at notch 1·2</dd><dt>size</dt><dd>78 × 75 mm · one face</dd>
+<dt>print</dt><dd>~40 min · 7 g</dd><dt>file</dt><dd>12_FC_flower_sides.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_FD.svg" alt="Flower of Life: centre + border drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>FD</code><h3>Flower of Life: centre + border</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at notch 1</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~50 min · 10 g</dd><dt>file</dt><dd>13_FD_flower_centre_border.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_FE.svg" alt="Flower of Life: dots drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>FE</code><h3>Flower of Life: dots</h3></div><p></p>
+<dl><dt>use</dt><dd>once</dd><dt>size</dt><dd>78 × 75 mm · one face</dd>
+<dt>print</dt><dd>~60 min · 10 g</dd><dt>file</dt><dd>14_FE_flower_dots.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_R1.svg" alt="Hub ring drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>R1</code><h3>Hub ring</h3></div><p>trace the circle in the gap between hub and piece; face B fills the two tab gaps</p>
+<dl><dt>use</dt><dd>A then B at hub 1–8</dd><dt>size</dt><dd>58 × 13 mm · two faces</dd>
+<dt>print</dt><dd>~10 min · 1 g</dd><dt>file</dt><dd>30_R1_hub_ring.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_DM.svg" alt="Dome drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>DM</code><h3>Dome</h3></div><p>smooth edge = arc, notches = pearls, 8 slots = rays (16 with face B), cut-out = sun</p>
+<dl><dt>use</dt><dd>A then B at hub 1–8</dd><dt>size</dt><dd>46 × 32 mm · two faces</dd>
+<dt>print</dt><dd>~10 min · 2 g</dd><dt>file</dt><dd>31_DM_dome.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_PT.svg" alt="Petal drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>PT</code><h3>Petal</h3></div><p>edge = petal, opening = inner petal, pockets on a groove = pearls; face B closes the arm gap</p>
+<dl><dt>use</dt><dd>A then B at hub 1–8</dd><dt>size</dt><dd>63 × 36 mm · two faces</dd>
+<dt>print</dt><dd>~10 min · 2 g</dd><dt>file</dt><dd>32_PT_petal.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_K1.svg" alt="Corner web 20 cm drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>K1</code><h3>Corner web 20 cm</h3></div><p></p>
+<dl><dt>use</dt><dd>4 corners</dd><dt>size</dt><dd>38 × 38 mm · prints lips up</dd>
+<dt>print</dt><dd>~20 min · 2 g</dd><dt>file</dt><dd>37_K1_corner_20cm.stl</dd></dl></div></article></div>
+<h3>Step by step</h3>
+<div class="steps"><div class="step"><div class="canvas"><img src="img3/k1_s01_hub.svg" alt="Jig holding the hub at the canvas centre" loading="lazy" width="480" height="480"></div><h3>Centre the hub</h3><ul><li>A rice grain of putty in each of the 3 pockets under the hub.</li><li>Hook the jig on a canvas corner. Drop the hub in with number 6 on the jig’s tooth. Press, lift the jig.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k1_s02_fa.svg" alt="Insert FA in the hub with its teeth in gold" loading="lazy" width="480" height="480"></div><h3>Flower of Life: FA</h3><ul><li>Drop FA in: its two teeth go into two inner notches, the bump sits opposite.</li><li>Trace inside the 3 circles. Lift, flip to face B at the same notch: 3 more.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k1_s03_fb.svg" alt="Insert FB at notch 2" loading="lazy" width="480" height="480"></div><h3>Inner ring: FB</h3><ul><li>One circle per face. Face A then B at notches 1, 2 and 3 gives all six.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k1_s04_fd.svg" alt="Insert FD tracing the border in the lane" loading="lazy" width="480" height="480"></div><h3>Sides FC, centre FD</h3><ul><li>FC: face A at notches 1 and 2.</li><li>FD: trace the centre circle, then the border in the gap between the insert and the hub. Flip, trace the border again to close the tab gaps.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k1_s05_ring.svg" alt="Ring piece R1 at number 3" loading="lazy" width="480" height="480"></div><h3>Hub ring: R1</h3><ul><li>At each number: face A, trace the circle in the gap between hub and piece. Flip, face B.</li><li>The tabs never cover the same spot on both faces, so the circle closes.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k1_s06_domeA.svg" alt="Dome piece face A at number 1" loading="lazy" width="480" height="480"></div><h3>Dome, face A</h3><ul><li>Smooth edge = arc. Notches = pearls. 8 slots = rays. Cut-out = sun.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k1_s07_domeB.svg" alt="Dome piece face B at number 1" loading="lazy" width="480" height="480"></div><h3>Dome, face B</h3><ul><li>Same number, flipped: the other half of the arc and pearls, and 8 rays between the first 8.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k1_s08_petal.svg" alt="Petal piece face B at number 1" loading="lazy" width="480" height="480"></div><h3>Petals</h3><ul><li>Face A draws the petal right of the number, face B the one on the left.</li><li>Edge = petal, opening = inner petal, grooved pockets = pearls.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k1_s09_dots.svg" alt="Dot insert FE in the hub" loading="lazy" width="480" height="480"></div><h3>Dots</h3><ul><li>Hub: glide each groove, press at every hole (big holes = big marker).</li><li>FE: the Flower of Life crossings, along the lattice grooves.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k1_s10_corner.svg" alt="Corner piece on the top-right corner" loading="lazy" width="480" height="480"></div><h3>Corners</h3><ul><li>Hook K1’s lips on each corner. Arcs in the channels, dots along the grooves.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k1_s11_done.svg" alt="Finished Seed Bloom" loading="lazy" width="480" height="480"></div><h3>Finish</h3><ul><li>Peel the hub off slowly. Touch up, cure 24 h, spray varnish.</li></ul></div></div>
+</div></section>
 
-<section id="parts">
-  <div class="wrap">
-    <span class="eyebrow">Kit 01 · 9 parts</span>
-    <h2>The parts and what each one draws</h2>
-    <p class="lede">All plates are 2 mm thick, print flat with no supports, and are drawn here from the marker side. Print times are approximate for a typical printer at 0.2 mm layers.</p>
-    <div class="parts">
-      <article class="part"><div class="pic"><img src="img/plate_T0.svg" alt="Fit Card plate with eight channels, eleven dot holes, a circle, a petal and an arc"></div><div class="meta"><div class="id"><code>T0</code><h3>Fit Card</h3></div><p>Channels 1.2–2.6 mm, dot holes 1.6–4.0 mm, a circle and petal to trace, an arc with a bridge.</p><dl><dt>size</dt><dd>118 × 74 mm</dd><dt>print</dt><dd>~50 min · 19 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_J20.svg" alt="Centre Jig: corner lips, diagonal arm and a ring that holds the hub"></div><div class="meta"><div class="id"><code>J20</code><h3>Centre Jig</h3></div><p>Lips hook a canvas corner. The ring holds the hub at the exact centre with number 6 on its tooth. Fits 20 cm and 8 in canvases.</p><dl><dt>size</dt><dd>163 × 163 mm</dd><dt>print</dt><dd>~50 min · 16 g · lips up</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_H1.svg" alt="Hub ring with two rows of dot holes, 48 outer notches and 6 inner notches"></div><div class="meta"><div class="id"><code>H1</code><h3>Hub</h3></div><p>The anchor. Draws two dot rings (48 big, 48 small). Its inner edge and outer edge are traced for the two main circles.</p><dl><dt>size</dt><dd>Ø 108 mm</dd><dt>print</dt><dd>~45 min · 9 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_F1.svg" alt="Flower of Life line insert with seven bead-chain openings"></div><div class="meta"><div class="id"><code>F1</code><h3>Flower of Life · lines</h3></div><p>Seven bead-chain openings. Trace them at 3 consecutive inner notches and the full lens field appears.</p><dl><dt>used</dt><dd>3 turns</dd><dt>print</dt><dd>~35 min · 8 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_F2.svg" alt="Flower of Life dot insert with 37 big dot holes and a ring of small holes"></div><div class="meta"><div class="id"><code>F2</code><h3>Flower of Life · dots</h3></div><p>37 big dots on every lattice point and 54 small dots where the arcs meet the boundary circle.</p><dl><dt>used</dt><dd>1 time</dd><dt>print</dt><dd>~40 min · 11 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_A1.svg" alt="Plate A with a dome channel, a small sun arc and a petal opening"></div><div class="meta"><div class="id"><code>A1</code><h3>Plate A · structure</h3></div><p>Dome arc (channel with a bridge at the top), little sun arc, petal outline (opening).</p><dl><dt>used</dt><dd>8 positions</dd><dt>print</dt><dd>~25 min · 4.5 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_B1.svg" alt="Plate B with seven ray channels, an echo arc and an inner petal opening"></div><div class="meta"><div class="id"><code>B1</code><h3>Plate B · detail</h3></div><p>Seven sunburst rays, the echo arc outside the dome, and the inner petal.</p><dl><dt>used</dt><dd>8 positions</dd><dt>print</dt><dd>~25 min · 5 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_D1.svg" alt="Plate D with 44 dot holes"></div><div class="meta"><div class="id"><code>D1</code><h3>Plate D · dots</h3></div><p>43 holes: dome trail, petal band, ray tips, crown, petal heart, and the dots that cover the bridges.</p><dl><dt>used</dt><dd>8 positions</dd><dt>print</dt><dd>~30 min · 7 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_K1.svg" alt="Corner plate with four arcs, ladder ticks and two rows of dot holes"></div><div class="meta"><div class="id"><code>K1</code><h3>Corner web</h3></div><p>Four quarter arcs, nine ladder ticks and 27 dots. Two lips hook onto the canvas corner.</p><dl><dt>used</dt><dd>4 corners</dd><dt>print</dt><dd>~20 min · 3.5 g · lips up</dd></dl></div></article>
-    </div>
-  </div>
-</section>
+<section id="kit02"><div class="wrap">
+<span class="eyebrow">Phase 2 · 30 × 30 cm / 12 × 12 in</span>
+<h2>Kit 02 · Turquoise Bloom</h2>
+<div class="paintings" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+<figure class="painting" style="margin:0"><div class="canvas"><img src="img3/k2_turquoise.svg" alt="Turquoise Bloom 30 cm" width="600" height="600"></div><h3>Turquoise</h3></figure>
+<figure class="painting" style="margin:0"><div class="canvas"><img src="img3/k2_rose.svg" alt="Turquoise Bloom in rose" width="600" height="600"></div><h3>Rose</h3></figure>
+</div>
+<p class="muted">Uses Kit 01’s hub, centre inserts, R1, DM and PT, plus:</p>
+<div class="parts"><article class="part"><div class="pic"><img src="img3/part_J30.svg" alt="Centre jig 30 cm / 12 in drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>J30</code><h3>Centre jig 30 cm / 12 in</h3></div><p></p>
+<dl><dt>use</dt><dd>once</dd><dt>size</dt><dd>206 × 206 mm · prints lips up</dd>
+<dt>print</dt><dd>~90 min · 17 g</dd><dt>file</dt><dd>03_J30_jig_30cm_12in.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_RC.svg" alt="Ring C2 drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>RC</code><h3>Ring C2</h3></div><p>smooth edge = ring, notches = outer pearls, grooved pockets = inner pearls</p>
+<dl><dt>use</dt><dd>A then B at hub 1–8</dd><dt>size</dt><dd>83 × 53 mm · two faces</dd>
+<dt>print</dt><dd>~20 min · 3 g</dd><dt>file</dt><dd>40_RC_ring_c2.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_FN.svg" alt="Rainbow fan drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>FN</code><h3>Rainbow fan</h3></div><p>edge = outer arc, slots = inner arcs, grooved pockets + crown notches = dots</p>
+<dl><dt>use</dt><dd>A then B at hub 1–8</dd><dt>size</dt><dd>84 × 61 mm · two faces</dd>
+<dt>print</dt><dd>~30 min · 4 g</dd><dt>file</dt><dd>41_FN_fan.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_GP.svg" alt="Great petal drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>GP</code><h3>Great petal</h3></div><p>edge = outline, grooved pockets = pearls</p>
+<dl><dt>use</dt><dd>A then B at hub 1·3·5·7</dd><dt>size</dt><dd>60 × 95 mm · two faces</dd>
+<dt>print</dt><dd>~20 min · 4 g</dd><dt>file</dt><dd>42_GP_great_petal.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_GH.svg" alt="Petal heart drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>GH</code><h3>Petal heart</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at hub 1·3·5·7</dd><dt>size</dt><dd>60 × 86 mm · two faces</dd>
+<dt>print</dt><dd>~20 min · 2 g</dd><dt>file</dt><dd>43_GH_petal_heart.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_ST.svg" alt="Star disc drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>ST</code><h3>Star disc</h3></div><p>edge = circle, sparkles = pockets on cross grooves</p>
+<dl><dt>use</dt><dd>A then B at hub 2·4·6·8</dd><dt>size</dt><dd>60 × 103 mm · two faces</dd>
+<dt>print</dt><dd>~30 min · 5 g</dd><dt>file</dt><dd>44_ST_star_disc.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_HL.svg" alt="Halo drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>HL</code><h3>Halo</h3></div><p>outer edge = echo circle, inner notches = pearls</p>
+<dl><dt>use</dt><dd>A then B at hub 2·4·6·8</dd><dt>size</dt><dd>60 × 110 mm · two faces</dd>
+<dt>print</dt><dd>~20 min · 3 g</dd><dt>file</dt><dd>45_HL_halo.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_K2.svg" alt="Corner fan 30 cm drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>K2</code><h3>Corner fan 30 cm</h3></div><p></p>
+<dl><dt>use</dt><dd>4 corners</dd><dt>size</dt><dd>49 × 49 mm · prints lips up</dd>
+<dt>print</dt><dd>~20 min · 4 g</dd><dt>file</dt><dd>46_K2_corner_30cm.stl</dd></dl></div></article></div>
+<h3>Step by step</h3>
+<div class="steps"><div class="step"><div class="canvas"><img src="img3/k2_s01_ring.svg" alt="Ring piece RC" loading="lazy" width="480" height="480"></div><h3>Ring C2: RC</h3><ul><li>After the Seed Bloom centre (with J30): smooth edge = ring, notches = outer pearls, grooved pockets = inner pearls.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k2_s02_fan.svg" alt="Fan piece FN" loading="lazy" width="480" height="480"></div><h3>Rainbow fans: FN</h3><ul><li>Edge = outer arc, slots = inner arcs, grooved pockets and crown notches = dots.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k2_s03_petal.svg" alt="Great petal GP at number 3" loading="lazy" width="480" height="480"></div><h3>Great petals: GP</h3><ul><li>Only at 1, 3, 5, 7. Edge = outline; face B closes the gap at the arm.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k2_s04_heart.svg" alt="Petal heart GH" loading="lazy" width="480" height="480"></div><h3>Petal hearts: GH</h3><ul><li>Same numbers. Edge = middle teardrop, opening = inner teardrop.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k2_s05_star.svg" alt="Star disc ST at number 2" loading="lazy" width="480" height="480"></div><h3>Star discs: ST</h3><ul><li>Only at 2, 4, 6, 8. Edge = circle, sparkles = pockets on cross grooves.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k2_s06_halo.svg" alt="Halo HL at number 4" loading="lazy" width="480" height="480"></div><h3>Halos: HL</h3><ul><li>Same numbers. Outer edge = echo circle, inner notches = pearls.</li></ul></div><div class="step"><div class="canvas"><img src="img3/k2_s07_corner.svg" alt="Corner K2" loading="lazy" width="480" height="480"></div><h3>Corners: K2</h3><ul><li>Hook on each corner.</li></ul></div></div>
+</div></section>
 
-<section id="paintings">
-  <div class="wrap">
-    <span class="eyebrow">Paintings from Kit 01</span>
-    <h2>Three paintings, one set of stencils</h2>
-    <p class="lede">The colour rule is simple: lines in colour 1, big holes in colour 3, small holes in colour 2. Change the colours or leave out a plate and you get a different painting.</p>
-    <div class="paintings">
-      <figure class="painting" style="margin:0"><div class="canvas"><img src="img/P1_turquoise.svg" alt="Seed Bloom in turquoise, gold and cream on black" width="600" height="600"></div><div class="swatches"><i style="background:#0b0f14"></i><i style="background:#3fd6d0"></i><i style="background:#f4efe2"></i><i style="background:#f2c45a"></i></div><h3>01 · Seed Bloom, Turquoise</h3><p>Everything: F1, circles, A, B, hub dots, F2, D, K. Black canvas, turquoise lines, cream small dots, gold big dots. About 2 hours.</p></figure>
-      <figure class="painting" style="margin:0"><div class="canvas"><img src="img/P1_moonlight.svg" alt="Seed Bloom in cream lines with gold and sky-blue dots on navy" width="600" height="600"></div><div class="swatches"><i style="background:#121a3d"></i><i style="background:#f1ece0"></i><i style="background:#8fe3ff"></i><i style="background:#f2c45a"></i></div><h3>02 · Seed Bloom, Moonlight</h3><p>Same plates, different palette: navy canvas, cream lines, sky-blue small dots, gold big dots.</p></figure>
-      <figure class="painting" style="margin:0"><div class="canvas"><img src="img/P1_lotus_rose.svg" alt="Lighter Lotus version in pink lines with lilac and gold dots" width="600" height="600"></div><div class="swatches"><i style="background:#140c16"></i><i style="background:#ff7aa8"></i><i style="background:#c9b6ff"></i><i style="background:#ffd27a"></i></div><h3>03 · Lotus, Rose</h3><p>Leave out plate B and the corners for a lighter, airier piece in about an hour. A good first painting.</p></figure>
-    </div>
-  </div>
-</section>
+<section id="library"><div class="wrap">
+<span class="eyebrow">Phase 3 · library</span>
+<h2>More centres and a second ring set</h2>
+<h3>Centres</h3>
+<div class="parts"><article class="part"><div class="pic"><img src="img3/part_B0.svg" alt="Border ring drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>B0</code><h3>Border ring</h3></div><p>trace the circle in the gap; face B closes the tab gaps</p>
+<dl><dt>use</dt><dd>A then B at notch 1</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~60 min · 11 g</dd><dt>file</dt><dd>15_B0_border_ring.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_SF.svg" alt="Sunflower drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>SF</code><h3>Sunflower</h3></div><p>golden-angle dots on 21 spiral grooves</p>
+<dl><dt>use</dt><dd>once</dd><dt>size</dt><dd>78 × 75 mm · one face</dd>
+<dt>print</dt><dd>~50 min · 9 g</dd><dt>file</dt><dd>16_SF_sunflower.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_MK1.svg" alt="Merkaba lines drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>MK1</code><h3>Merkaba lines</h3></div><p>outer and inner triangles inside the openings, middle triangle around the island</p>
+<dl><dt>use</dt><dd>A then B at notch 1·2</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~40 min · 8 g</dd><dt>file</dt><dd>17_MK1_merkaba_lines.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_MK2.svg" alt="Merkaba dots drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>MK2</code><h3>Merkaba dots</h3></div><p></p>
+<dl><dt>use</dt><dd>once</dd><dt>size</dt><dd>78 × 75 mm · one face</dd>
+<dt>print</dt><dd>~60 min · 10 g</dd><dt>file</dt><dd>18_MK2_merkaba_dots.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_SE1.svg" alt="Seed of Life: petals drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>SE1</code><h3>Seed of Life: petals</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at notch 1·2·3</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~50 min · 9 g</dd><dt>file</dt><dd>19_SE1_seed_petals.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_SE2.svg" alt="Seed of Life: centre + border drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>SE2</code><h3>Seed of Life: centre + border</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at notch 1</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~50 min · 9 g</dd><dt>file</dt><dd>20_SE2_seed_centre_border.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_SE3.svg" alt="Seed of Life: dots drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>SE3</code><h3>Seed of Life: dots</h3></div><p></p>
+<dl><dt>use</dt><dd>once</dd><dt>size</dt><dd>78 × 75 mm · one face</dd>
+<dt>print</dt><dd>~60 min · 10 g</dd><dt>file</dt><dd>21_SE3_seed_dots.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_MT1.svg" alt="Metatron: centre + outer circles drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>MT1</code><h3>Metatron: centre + outer circles</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at notch 1</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~40 min · 8 g</dd><dt>file</dt><dd>22_MT1_metatron_circles_a.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_MT2.svg" alt="Metatron: inner circles drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>MT2</code><h3>Metatron: inner circles</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at notch 1</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~50 min · 10 g</dd><dt>file</dt><dd>23_MT2_metatron_circles_b.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_MT3.svg" alt="Metatron lines 0/60/120 drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>MT3</code><h3>Metatron lines 0/60/120</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at notch 1·2</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~60 min · 10 g</dd><dt>file</dt><dd>24_MT3_metatron_lines_a.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_MT4.svg" alt="Metatron lines 30/90/150 drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>MT4</code><h3>Metatron lines 30/90/150</h3></div><p></p>
+<dl><dt>use</dt><dd>A at notch 1·2·3</dd><dt>size</dt><dd>78 × 75 mm · one face</dd>
+<dt>print</dt><dd>~60 min · 10 g</dd><dt>file</dt><dd>25_MT4_metatron_lines_b.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_MT5.svg" alt="Metatron lines 19/41 drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>MT5</code><h3>Metatron lines 19/41</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at notch 1·2·3</dd><dt>size</dt><dd>78 × 75 mm · two faces</dd>
+<dt>print</dt><dd>~60 min · 11 g</dd><dt>file</dt><dd>26_MT5_metatron_lines_c.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_MT6.svg" alt="Metatron dots drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>MT6</code><h3>Metatron dots</h3></div><p></p>
+<dl><dt>use</dt><dd>once</dd><dt>size</dt><dd>78 × 75 mm · one face</dd>
+<dt>print</dt><dd>~60 min · 11 g</dd><dt>file</dt><dd>27_MT6_metatron_dots.stl</dd></dl></div></article></div>
+<h3>Lace ring set</h3>
+<div class="parts"><article class="part"><div class="pic"><img src="img3/part_AR.svg" alt="Arch drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>AR</code><h3>Arch</h3></div><p>band edge = base circle, round edge = arch, cut-out = inner arch</p>
+<dl><dt>use</dt><dd>A then B at hub 1–8</dd><dt>size</dt><dd>48 × 13 mm · two faces</dd>
+<dt>print</dt><dd>~10 min · 0 g</dd><dt>file</dt><dd>33_AR_arch.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_LT.svg" alt="Lotus petal drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>LT</code><h3>Lotus petal</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at hub 1–8</dd><dt>size</dt><dd>46 × 28 mm · two faces</dd>
+<dt>print</dt><dd>~10 min · 1 g</dd><dt>file</dt><dd>34_LT_lotus.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_OR.svg" alt="Outer ring drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>OR</code><h3>Outer ring</h3></div><p>smooth edge = ring, notches = pearls</p>
+<dl><dt>use</dt><dd>A then B at hub 1–8</dd><dt>size</dt><dd>66 × 30 mm · two faces</dd>
+<dt>print</dt><dd>~20 min · 2 g</dd><dt>file</dt><dd>35_OR_outer_ring.stl</dd></dl></div></article><article class="part"><div class="pic"><img src="img3/part_OP.svg" alt="Outer petal drawing" loading="lazy"></div>
+<div class="meta"><div class="id"><code>OP</code><h3>Outer petal</h3></div><p></p>
+<dl><dt>use</dt><dd>A then B at hub 1–8</dd><dt>size</dt><dd>49 × 47 mm · two faces</dd>
+<dt>print</dt><dd>~10 min · 2 g</dd><dt>file</dt><dd>36_OP_outer_petal.stl</dd></dl></div></article></div>
+<h3>Recipes</h3>
+<div class="gallery"><figure><div class="canvas"><img src="img3/r_fol_bloom.svg" alt="fol centre with bloom ring" loading="lazy" width="320" height="320"></div><figcaption>Fol + Bloom</figcaption></figure><figure><div class="canvas"><img src="img3/r_fol_lace.svg" alt="fol centre with lace ring" loading="lazy" width="320" height="320"></div><figcaption>Fol + Lace</figcaption></figure><figure><div class="canvas"><img src="img3/r_sunflower_bloom.svg" alt="sunflower centre with bloom ring" loading="lazy" width="320" height="320"></div><figcaption>Sunflower + Bloom</figcaption></figure><figure><div class="canvas"><img src="img3/r_sunflower_lace.svg" alt="sunflower centre with lace ring" loading="lazy" width="320" height="320"></div><figcaption>Sunflower + Lace</figcaption></figure><figure><div class="canvas"><img src="img3/r_merkaba_bloom.svg" alt="merkaba centre with bloom ring" loading="lazy" width="320" height="320"></div><figcaption>Merkaba + Bloom</figcaption></figure><figure><div class="canvas"><img src="img3/r_merkaba_lace.svg" alt="merkaba centre with lace ring" loading="lazy" width="320" height="320"></div><figcaption>Merkaba + Lace</figcaption></figure><figure><div class="canvas"><img src="img3/r_seed_bloom.svg" alt="seed centre with bloom ring" loading="lazy" width="320" height="320"></div><figcaption>Seed + Bloom</figcaption></figure><figure><div class="canvas"><img src="img3/r_seed_lace.svg" alt="seed centre with lace ring" loading="lazy" width="320" height="320"></div><figcaption>Seed + Lace</figcaption></figure><figure><div class="canvas"><img src="img3/r_metatron_bloom.svg" alt="metatron centre with bloom ring" loading="lazy" width="320" height="320"></div><figcaption>Metatron + Bloom</figcaption></figure><figure><div class="canvas"><img src="img3/r_metatron_lace.svg" alt="metatron centre with lace ring" loading="lazy" width="320" height="320"></div><figcaption>Metatron + Lace</figcaption></figure></div>
+</div></section>
 
-<section id="steps">
-  <div class="wrap">
-    <span class="eyebrow">Painting Seed Bloom</span>
-    <h2>Step by step</h2>
-    <p class="lede">You need: a 20 × 20 cm canvas painted black and fully dry, a fine marker for lines (PC-3M class), a fine marker for small dots, a medium marker for big dots (PC-5M class), removable poster putty, scrap paper and a paper towel.</p>
-    <div class="steps">
-      <div class="step"><div class="canvas"><img src="img/s1_hub.svg" alt="Centre Jig on the bottom-left corner holding the hub at the canvas centre" loading="lazy" width="520" height="520"></div><h3>Centre the hub</h3><ul><li>Press a rice grain of putty into each of the 3 pockets under the hub.</li><li>Hook the jig’s lips over a canvas corner.</li><li>Drop the hub into the jig ring with number 6 on the jig’s tooth. Press it down.</li><li>Lift the jig straight up.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/s2_fol_A.svg" alt="Flower of Life lines after the first turn; the insert is shown at the next notch" loading="lazy" width="520" height="520"></div><h3>Flower of Life: 3 turns</h3><ul><li>Drop F1 into the hub, ear in any inner notch.</li><li>Run the tip along the top wall of every bead chain, then along the bottom wall.</li><li>Lift, move the ear one notch clockwise, trace again. Repeat once more.</li></ul><p class="note">Trace only the curved walls. Skip the short flat ends at the rim.</p></div>
-      <div class="step"><div class="canvas"><img src="img/s3_circles.svg" alt="Complete Flower of Life inside the hub" loading="lazy" width="520" height="520"></div><h3>Two circles from the hub</h3><ul><li>Remove F1. Trace once around the inside edge of the hub: that is the Flower of Life border.</li><li>Trace once around the outside edge of the hub.</li><li>Keep the marker upright and the tip touching the wall.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/s4_plateA.svg" alt="Plate A placed at position 7 after positions 1, 3 and 5 are drawn" loading="lazy" width="520" height="520"></div><h3>Plate A: 8 positions</h3><ul><li>Point the ▼ at hub number 1 and slide the plate in until both teeth click into notches.</li><li>Glide the dome channel and sun arc. Trace inside the petal.</li><li>Go 1, 3, 5, 7, then 2, 4, 6, 8.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/s5_plateB.svg" alt="Plate B at position 5" loading="lazy" width="520" height="520"></div><h3>Plate B: 8 positions</h3><ul><li>Same click-in and the same order.</li><li>Glide the 7 rays and the echo arc. Trace inside the small petal.</li><li>Wait about 10 minutes before you start the dots.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/s6_dots_core.svg" alt="F2 dot insert in the hub after the hub dots are done" loading="lazy" width="520" height="520"></div><h3>Dots in the centre</h3><ul><li>Hub: big marker in the inner row, small marker in the outer row.</li><li>Drop F2 into the hub. Big holes, then small holes.</li><li>Tip straight down, hold 1 second, lift straight up.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/s7_plateD.svg" alt="Plate D at position 2 with odd positions already dotted" loading="lazy" width="520" height="520"></div><h3>Plate D: 8 positions</h3><ul><li>Click in like A and B.</li><li>Big holes first (they cover the bridges), then small holes.</li><li>Same 1-3-5-7, 2-4-6-8 order.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/s8_corners.svg" alt="Corner plate hooked on the top-right corner" loading="lazy" width="520" height="520"></div><h3>Corners</h3><ul><li>Hook K1’s two lips onto a corner, both lips against the canvas sides.</li><li>Glide the arcs and ticks, then the dots.</li><li>Any order: the four corners never overlap.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/s9_done.svg" alt="Finished Seed Bloom painting" loading="lazy" width="520" height="520"></div><h3>Finish</h3><ul><li>Peel the hub off slowly and roll away any putty.</li><li>Touch up any tiny gap with the fine marker.</li><li>Let it cure for 24 hours, then use a spray varnish (brushing can smear marker paint).</li></ul></div>
-    </div>
-  </div>
-</section>
+<section id="mixer"><div class="wrap">
+<span class="eyebrow">Design a kit</span>
+<h2>Mixer</h2>
+<div class="mixer">
+<div class="stage" id="stage"><div data-layer="hub"></div><div data-layer="core"></div><div data-layer="ring"></div><div data-layer="corner"></div></div>
+<div class="controls">
+<fieldset><legend>Centre</legend><label><input type="radio" name="core" value="fol" checked> Flower of Life</label><label><input type="radio" name="core" value="sunflower" > Sunflower</label><label><input type="radio" name="core" value="merkaba" > Merkaba</label><label><input type="radio" name="core" value="seed" > Seed of Life</label><label><input type="radio" name="core" value="metatron" > Metatron’s Cube</label></fieldset>
+<fieldset><legend>Ring</legend><label><input type="radio" name="ring" value="bloom" checked> Bloom (domes + petals)</label><label><input type="radio" name="ring" value="lace" > Lace (arches, lotus, ring, petals)</label></fieldset>
+<fieldset><legend>Colours</legend><label><input type="radio" name="pal" value="turquoise" checked> Turquoise</label><label><input type="radio" name="pal" value="moonlight" > Moonlight</label><label><input type="radio" name="pal" value="rose" > Rose</label><label><input type="radio" name="pal" value="gold" > Gold</label></fieldset>
+<fieldset><legend>Corners</legend><label><input type="checkbox" id="corners" checked> Corner webs (K1)</label></fieldset>
+<p class="parts-used" id="used"></p>
+</div></div></div></section>
 
-<section id="rules">
-  <div class="wrap">
-    <span class="eyebrow">Alignment and application</span>
-    <h2>The rules that make it work</h2>
-    <div class="rules">
-      <div class="rule"><b>Never move the hub</b><p>Every placement refers to it. If it shifts, stop, press it back with the jig, and check it against a line you already drew.</p></div>
-      <div class="rule"><b>Click, don’t eyeball</b><p>Wedge plates: ▼ toward the hub number, slide in until both teeth sit in notches. Half a notch off, the teeth hit the hub and the plate won’t lie flat.</p></div>
-      <div class="rule"><b>Hold flat, away from openings</b><p>Press with two flat fingertips on solid plastic. Pressing near a channel can lift the far side.</p></div>
-      <div class="rule"><b>Glide channels, trace openings</b><p>In a channel, just move the tip along. In an opening, keep light contact with the inside wall all the way round.</p></div>
-      <div class="rule"><b>Gaps at bridges are planned</b><p>Every bridge gap gets a big dot from plate D or F2. Don’t fill them freehand.</p></div>
-      <div class="rule"><b>Odd, then even</b><p>1-3-5-7 then 2-4-6-8. Between layers (A → B → dots), wait until a test line on scrap is dry to the touch.</p></div>
-      <div class="rule"><b>Prime on scrap, not on canvas</b><p>Pump the marker on paper until it flows evenly. A flooded tip leaves a blob that runs under the plate.</p></div>
-      <div class="rule"><b>Lift straight up, wipe the back</b><p>Never slide a plate across wet paint. Wipe the underside with a damp towel when you change colour.</p></div>
-      <div class="rule"><b>Big holes = colour 3, small = colour 2</b><p>The hole size tells you which marker to use. A big marker won’t fit a small hole.</p></div>
-      <div class="rule"><b>Labels face you</b><p>Every part is used with its engraved label on top. The canvas side has a small undercut around each opening so the plastic never touches a fresh line.</p></div>
-    </div>
-  </div>
-</section>
+<section id="rules"><div class="wrap">
+<span class="eyebrow">Alignment and application</span>
+<h2>Rules</h2>
+<div class="rules">
+<div class="rule"><b>Never move the hub</b><p>Everything refers to it. If it shifts, press it back with the jig.</p></div>
+<div class="rule"><b>Teeth first, then flat</b><p>Set the teeth in their notches, then lay the piece flat. Lift straight up.</p></div>
+<div class="rule"><b>Face A, then flip to face B</b><p>At every placement in the tables. Some pieces are one-faced; their table says “A”.</p></div>
+<div class="rule"><b>Edges: light contact all round</b><p>Keep the marker upright and the tip touching the edge or the opening wall.</p></div>
+<div class="rule"><b>Lanes: ride the piece, not the hub</b><p>In the gap around the hub, keep the tip against the piece’s edge. The hub side has notches.</p></div>
+<div class="rule"><b>Grooves: glide, press, glide</b><p>The tip can’t reach the canvas in the groove, only at the pockets.</p></div>
+<div class="rule"><b>Big holes = colour 3, small = colour 2</b><p>The hole size tells you which marker to use.</p></div>
+<div class="rule"><b>Prime on scrap, wipe between colours</b><p>A flooded tip runs under the piece. Wipe the piece’s face when you change colour or flip it.</p></div>
+</div></div></section>
 
-<section id="calibrate">
-  <div class="wrap">
-    <span class="eyebrow">Phase 0</span>
-    <h2>Calibrate with the Fit Card</h2>
-    <div class="calib">
-      <div class="card"><img src="img/plate_T0.svg" alt="Fit Card" loading="lazy"></div>
-      <div style="display:grid; gap:14px; min-width:0">
-        <p><b>Channels (top row, 1.2 to 2.6 mm).</b> Find the narrowest channel your fine line marker glides through without catching or wobbling. That number is your <span class="mono">--line</span>.</p>
-        <p><b>Dot holes (middle row, 1.6 to 4.0 mm).</b> The smallest hole the fine tip drops into fully is <span class="mono">--dot-s</span>. Do the same with the medium marker for <span class="mono">--dot-m</span>.</p>
-        <p><b>Circle and petal.</b> Trace them on black card. The lines should be smooth and land 1 tip-radius inside the wall.</p>
-        <p><b>Arc with a bridge.</b> Draw the arc, then put one big dot on the gap. That is how every bridge in the kit is hidden.</p>
-        <p>The kit is built for 1.8 / 2.2 / 3.0 mm. If yours differ, regenerate:</p>
-        <pre>python3 make_kit.py --line 2.0 --dot-s 2.4 --dot-m 3.2</pre>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="files"><div class="wrap">
+<span class="eyebrow">Files</span>
+<h2>Project folder</h2>
+<div class="two"><ul class="files"><li>stl/00_T0_fit_card.stl</li><li>stl/01_H3_hub.stl</li><li>stl/02_J20_jig_20cm_8in.stl</li><li>stl/03_J30_jig_30cm_12in.stl</li><li>stl/10_FA_flower_corners.stl</li><li>stl/11_FB_flower_inner_ring.stl</li><li>stl/12_FC_flower_sides.stl</li><li>stl/13_FD_flower_centre_border.stl</li><li>stl/14_FE_flower_dots.stl</li><li>stl/15_B0_border_ring.stl</li><li>stl/16_SF_sunflower.stl</li><li>stl/17_MK1_merkaba_lines.stl</li><li>stl/18_MK2_merkaba_dots.stl</li><li>stl/19_SE1_seed_petals.stl</li><li>stl/20_SE2_seed_centre_border.stl</li><li>stl/21_SE3_seed_dots.stl</li><li>stl/22_MT1_metatron_circles_a.stl</li><li>stl/23_MT2_metatron_circles_b.stl</li><li>stl/24_MT3_metatron_lines_a.stl</li><li>stl/25_MT4_metatron_lines_b.stl</li><li>stl/26_MT5_metatron_lines_c.stl</li><li>stl/27_MT6_metatron_dots.stl</li><li>stl/30_R1_hub_ring.stl</li><li>stl/31_DM_dome.stl</li><li>stl/32_PT_petal.stl</li><li>stl/33_AR_arch.stl</li><li>stl/34_LT_lotus.stl</li><li>stl/35_OR_outer_ring.stl</li><li>stl/36_OP_outer_petal.stl</li><li>stl/37_K1_corner_20cm.stl</li><li>stl/40_RC_ring_c2.stl</li><li>stl/41_FN_fan.stl</li><li>stl/42_GP_great_petal.stl</li><li>stl/43_GH_petal_heart.stl</li><li>stl/44_ST_star_disc.stl</li><li>stl/45_HL_halo.stl</li><li>stl/46_K2_corner_30cm.stl</li></ul>
+<div style="display:grid;gap:10px;align-content:start">
+<p><span class="mono">make_v3.py</span> rebuilds every STL from your marker profile and runs all 130 checks.</p>
+<p><span class="mono">render_v3.py</span> renders the paintings, recipes, mixer layers, step frames and part drawings.</p>
+<p><span class="mono">v3.py</span> is the system (hub, lock, lanes, grooves, pieces). <span class="mono">v3_kit1.py</span> and <span class="mono">v3_more.py</span> are the designs.</p>
+<pre>python3 make_v3.py --line 2.0 --dot-s 2.4 --dot-m 3.2</pre>
+<p class="muted">Earlier versions (v1 plates, v2 prototype) are kept in <span class="mono">archive/</span>. They do not fit the v3 hub.</p>
+</div></div></div></section>
 
-<section id="print">
-  <div class="wrap">
-    <span class="eyebrow">Printing</span>
-    <h2>Print settings</h2>
-    <div class="two">
-      <div class="tbl"><table>
-        <thead><tr><th>Setting</th><th>Value</th></tr></thead>
-        <tbody>
-          <tr><td>Material</td><td>PLA for a first run, PETG for parts you will use many times</td></tr>
-          <tr><td>Nozzle / layer</td><td class="num">0.4 mm / 0.2 mm</td></tr>
-          <tr><td>Infill</td><td>100% (parts are only 2 mm thick)</td></tr>
-          <tr><td>Supports / brim</td><td>None / off</td></tr>
-          <tr><td>Bed</td><td>Smooth PEI or glass gives the best surface</td></tr>
-          <tr><td>Elephant foot compensation</td><td class="num">0.1–0.15 mm</td></tr>
-          <tr><td>Orientation</td><td>As in the files. J20 and K1 print lips up; flip them over to use.</td></tr>
-        </tbody>
-      </table></div>
-      <div style="display:grid; gap:12px; align-content:start">
-        <p>Kit 01: about <b>66 cm³ (82 g)</b> and roughly <b>5 hours</b> on a typical printer. Kit 02 adds about <b>70 cm³ (87 g)</b> and <b>6 hours</b>.</p>
-        <p>Every file was checked as a closed solid. A virtual assembly test (41 checks) confirms that every plate seats in the hub notches with zero overlap and is blocked half a notch off, that the inserts only sit at the six inner notches, that both jigs key the hub, and that no dot lands on another element’s paint except where it is meant to cover a bridge.</p>
-        <p class="muted">If a plate feels tight on the hub, sand the teeth lightly. If it rocks, your printer over-extrudes: lower the flow 2–3%.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<footer><div class="wrap">Mandala Stencil Studio · v3 · millimetres · hub numbers run clockwise from the top.</div></footer>
 
-<section id="kit02">
-  <div class="wrap">
-    <span class="eyebrow">Phase 2 · Kit 02 · 30 × 30 cm / 12 × 12 in</span>
-    <h2>Turquoise Bloom</h2>
-    <p class="lede">The dense hero piece. Seed Bloom becomes the centre, unchanged, and eight new parts add a border ring, rainbow fans, great teardrop petals on the four axes, star circles on the diagonals, and large corner fans. All of them click onto the same hub.</p>
-    <div class="paintings" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
-      <figure class="painting" style="margin:0"><div class="canvas"><img src="img/P2_turquoise.svg" alt="Turquoise Bloom: Seed Bloom centre inside a ring with rainbow fans, four great teardrop petals, four star circles and corner fans, in turquoise, cream and gold on black" width="660" height="660"></div><div class="swatches"><i style="background:#0b0f14"></i><i style="background:#3fd6d0"></i><i style="background:#f4efe2"></i><i style="background:#f2c45a"></i></div><h3>04 · Turquoise Bloom</h3><p>About 1,700 dots and 4 to 4½ hours of painting, including the Seed Bloom centre.</p></figure>
-      <figure class="painting" style="margin:0"><div class="canvas"><img src="img/P2_moonlight.svg" alt="Turquoise Bloom in the Moonlight palette: cream lines, sky-blue and gold dots on navy" width="660" height="660"></div><div class="swatches"><i style="background:#121a3d"></i><i style="background:#f1ece0"></i><i style="background:#8fe3ff"></i><i style="background:#f2c45a"></i></div><h3>05 · Turquoise Bloom, Moonlight</h3><p>Same plates on a navy canvas. Any three-colour palette works with the hole-size rule.</p></figure>
-    </div>
-
-    <h3 style="margin-top:12px">New parts (8)</h3>
-    <div class="parts">
-      <article class="part"><div class="pic"><img src="img/plate_J30.svg" alt="30 cm Centre Jig with a C-shaped cradle"></div><div class="meta"><div class="id"><code>J30</code><h3>Centre Jig 30 cm</h3></div><p>Same use as J20. The cradle is open on the far side so it fits a 210 mm print bed. Fits 30 cm and 12 in canvases.</p><dl><dt>size</dt><dd>202 × 202 mm</dd><dt>print</dt><dd>~55 min · 17 g · lips up</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_E1.svg" alt="Plate E1 with three nested fan arcs and a centre dot"></div><div class="meta"><div class="id"><code>E1</code><h3>Rainbow fans</h3></div><p>Three nested arcs standing on ring C2, plus a gold sun dot at their foot.</p><dl><dt>used</dt><dd>8 positions</dd><dt>print</dt><dd>~35 min · 8 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_D2.svg" alt="Plate D2 with the C2 ring channel and many dot holes"></div><div class="meta"><div class="id"><code>D2</code><h3>Ring + border dots</h3></div><p>The C2 ring channel (glide it with the line marker first), fan dot rows, the gold fan crown, and border dots on both sides of C2.</p><dl><dt>used</dt><dd>8 positions</dd><dt>print</dt><dd>~45 min · 11 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_P2.svg" alt="Plate P2 with a teardrop channel and an inner teardrop opening"></div><div class="meta"><div class="id"><code>P2</code><h3>Great petals</h3></div><p>Outer teardrop (channel, with bridges at the base and the tip) and the inner teardrop (opening).</p><dl><dt>used</dt><dd>positions 1 3 5 7</dd><dt>print</dt><dd>~40 min · 10 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_P3.svg" alt="Plate P3 with dot holes in teardrop rows"></div><div class="meta"><div class="id"><code>P3</code><h3>Petal dots</h3></div><p>White band row, gold inner row, a dotted heart, and the two big dots that cover P2’s bridges.</p><dl><dt>used</dt><dd>positions 1 3 5 7</dd><dt>print</dt><dd>~40 min · 10 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_S1.svg" alt="Plate S1 with a large circle opening ringed by dot holes"></div><div class="meta"><div class="id"><code>S1</code><h3>Star circles</h3></div><p>Circle opening to trace, a white rim of dots, and four gold dots that will cover S2’s bridges.</p><dl><dt>used</dt><dd>positions 2 4 6 8</dd><dt>print</dt><dd>~45 min · 11 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_S2.svg" alt="Plate S2 with a ring channel and a star field of dot holes"></div><div class="meta"><div class="id"><code>S2</code><h3>Echo + star field</h3></div><p>The echo circle channel (four bridges) and a mirror-symmetric field of sparkles inside it.</p><dl><dt>used</dt><dd>positions 2 4 6 8</dd><dt>print</dt><dd>~55 min · 15 g</dd></dl></div></article>
-      <article class="part"><div class="pic"><img src="img/plate_K2.svg" alt="Corner plate K2 with five arcs, ladder ticks and three dot rows"></div><div class="meta"><div class="id"><code>K2</code><h3>Corner fan 30 cm</h3></div><p>Five quarter arcs, eleven ladder ticks and 50 dots. Hooks onto the canvas corner like K1.</p><dl><dt>used</dt><dd>4 corners</dd><dt>print</dt><dd>~25 min · 5 g · lips up</dd></dl></div></article>
-    </div>
-    <p class="muted">Reused from Kit 01, no reprint: H1, F1, F2, A1, B1, D1. The 20 cm parts J20 and K1 are not used on a 30 cm canvas. New parts: about 70 cm³ (87 g) and 6 hours of printing. The longest plate is 113 mm, so everything fits a 180 mm bed except J30 (202 mm).</p>
-
-    <h3 style="margin-top:12px">Painting Turquoise Bloom, step by step</h3>
-    <div class="steps">
-      <div class="step"><div class="canvas"><img src="img/k2_s1_hub.svg" alt="J30 jig holding the hub at the centre of a 30 cm canvas" loading="lazy" width="540" height="540"></div><h3>Centre the hub with J30</h3><ul><li>Same as Kit 01: putty, jig on a corner, hub number 6 on the tooth, press, lift.</li><li>No room on your printer for J30? Measure instead: the hub’s outer edge sits 96 mm from each canvas edge (98 mm on a 12 in canvas).</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/k2_s2_centre.svg" alt="Seed Bloom centre lines drawn" loading="lazy" width="540" height="540"></div><h3>Seed Bloom lines</h3><ul><li>F1 (3 turns), the two hub circles, plate A ×8, plate B ×8, exactly as in Kit 01.</li><li>Leave the centre dots for later so one marker does all the lines.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/k2_s3_E1.svg" alt="E1 fans on odd positions, plate at position 2" loading="lazy" width="540" height="540"></div><h3>E1: rainbow fans ×8</h3><ul><li>Click in at each hub number, 1-3-5-7 then 2-4-6-8.</li><li>Glide the three arcs down to where ring C2 will be. Dot the gold sun hole with the big marker.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/k2_s4_P2.svg" alt="P2 petals at positions 1 and 3, plate at position 5" loading="lazy" width="540" height="540"></div><h3>P2: great petals ×4</h3><ul><li>Only positions 1, 3, 5, 7 (the axes).</li><li>Glide the outer teardrop channel, then trace inside the inner teardrop.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/k2_s5_S1.svg" alt="S1 star circles at 2 and 4, plate at position 6" loading="lazy" width="540" height="540"></div><h3>S1: star circles ×4</h3><ul><li>Only positions 2, 4, 6, 8 (the diagonals).</li><li>Trace the circle. Then the rim: small holes white, the 4 big holes gold.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/k2_s6_S2.svg" alt="S2 echo and star field at 2, 4 and 6, plate at position 8" loading="lazy" width="540" height="540"></div><h3>S2: echo + stars ×4</h3><ul><li>Positions 2, 4, 6, 8 again.</li><li>Glide the echo circle. Its four gaps line up with S1’s gold dots. Then dot the star field.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/k2_s7_D2.svg" alt="All centre dots done, D2 at positions 1, 3, 5 and the plate at 7" loading="lazy" width="540" height="540"></div><h3>Centre dots, then D2 ×8</h3><ul><li>Hub dots, F2 and plate D ×8 as in Kit 01.</li><li>D2 at every position: first glide ring C2 with the line marker, then big holes, then small holes.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/k2_s8_P3.svg" alt="P3 petal dots at 1, 3 and 5, plate at 7" loading="lazy" width="540" height="540"></div><h3>P3: petal dots ×4</h3><ul><li>Positions 1, 3, 5, 7.</li><li>The big dots at the base and tip cover P2’s two bridges.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/k2_s9_K2.svg" alt="K2 hooked on the top-right corner" loading="lazy" width="540" height="540"></div><h3>K2: corner fans</h3><ul><li>Hook both lips onto each corner.</li><li>Arcs and ticks with the line marker, then the dots.</li></ul></div>
-      <div class="step"><div class="canvas"><img src="img/k2_s10_done.svg" alt="Finished Turquoise Bloom" loading="lazy" width="540" height="540"></div><h3>Finish</h3><ul><li>Peel the hub off slowly, touch up gaps, cure 24 hours, then spray varnish.</li></ul></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <span class="eyebrow">Files</span>
-    <h2>What’s in the project folder</h2>
-    <div class="two">
-      <ul class="files">
-        <li>stl/00_T0_fit_card.stl</li>
-        <li>stl/01_J20_centre_jig_20cm_8in.stl</li>
-        <li>stl/02_H1_hub.stl</li>
-        <li>stl/03_F1_flower_of_life_lines.stl</li>
-        <li>stl/04_F2_flower_of_life_dots.stl</li>
-        <li>stl/05_A1_plate_A_domes_petals.stl</li>
-        <li>stl/06_B1_plate_B_rays_inner_petals.stl</li>
-        <li>stl/07_D1_plate_D_dots.stl</li>
-        <li>stl/08_K1_corner_web.stl</li>
-        <li>stl/10_J30_centre_jig_30cm_12in.stl</li>
-        <li>stl/11_E1_plate_E_rainbow_fans.stl</li>
-        <li>stl/12_D2_plate_D2_ring_border_dots.stl</li>
-        <li>stl/13_P2_plate_P2_great_petals.stl</li>
-        <li>stl/14_P3_plate_P3_petal_dots.stl</li>
-        <li>stl/15_S1_plate_S1_star_circles.stl</li>
-        <li>stl/16_S2_plate_S2_echo_star_field.stl</li>
-        <li>stl/17_K2_corner_fan_30cm.stl</li>
-      </ul>
-      <div style="display:grid; gap:10px; align-content:start">
-        <p><span class="mono">make_kit.py</span> rebuilds every STL from your marker profile and re-runs the fit check.</p>
-        <p><span class="mono">design01.py</span> and <span class="mono">design02.py</span> hold the Seed Bloom and Turquoise Bloom designs: radii, petal sizes, ray count, dot spacing. Change a number, rebuild, and the plates follow.</p>
-        <p><span class="mono">geom.py</span> and <span class="mono">parts.py</span> hold the stencil system: hub, notches, teeth, inserts, plates, jig.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer><div class="wrap">Mandala Stencil Studio · Kit 01 Seed Bloom · Kit 02 Turquoise Bloom · all measurements in millimetres · hub positions are numbered clockwise from the top.</div></footer>
+<script>
+(function () {
+  var PAL = {"turquoise": ["#0b0f14", "#3fd6d0", "#f4efe2", "#f2c45a"], "moonlight": ["#121a3d", "#f1ece0", "#8fe3ff", "#f2c45a"], "rose": ["#140c16", "#ff7aa8", "#c9b6ff", "#ffd27a"], "gold": ["#101010", "#f2c45a", "#f4efe2", "#3fd6d0"]};
+  var CORES = {"fol": ["FA", "FB", "FC", "FD", "FE"], "sunflower": ["B0", "SF"], "merkaba": ["MK1", "MK2"], "seed": ["SE1", "SE2", "SE3"], "metatron": ["MT1", "MT2", "MT3", "MT4", "MT5", "MT6"]};
+  var RINGS = {"bloom": ["R1", "DM", "PT"], "lace": ["R1", "AR", "LT", "OR", "OP"]};
+  var cache = {};
+  function load(name) {
+    if (cache[name]) return cache[name];
+    cache[name] = fetch('img3/mx_' + name + '.svg').then(function (r) { return r.text(); }).catch(function () { return ''; });
+    return cache[name];
+  }
+  function val(n) { var e = document.querySelector('input[name="' + n + '"]:checked'); return e ? e.value : null; }
+  function render() {
+    var st = document.getElementById('stage');
+    var core = val('core'), ring = val('ring'), pal = PAL[val('pal')];
+    st.style.setProperty('--mx-bg', pal[0]); st.style.setProperty('--mx-line', pal[1]);
+    st.style.setProperty('--mx-white', pal[2]); st.style.setProperty('--mx-gold', pal[3]);
+    var want = { hub: 'hub', core: 'core_' + core, ring: 'ring_' + ring, corner: document.getElementById('corners').checked ? 'corner' : '' };
+    Object.keys(want).forEach(function (k) {
+      var el = st.querySelector('[data-layer="' + k + '"]');
+      if (!want[k]) { el.innerHTML = ''; return; }
+      load(want[k]).then(function (t) { el.innerHTML = t; });
+    });
+    var used = CORES[core].concat(['H3'], RINGS[ring], document.getElementById('corners').checked ? ['K1'] : []);
+    document.getElementById('used').textContent = 'Parts: ' + used.join(' · ');
+  }
+  document.querySelectorAll('.controls input').forEach(function (i) { i.addEventListener('change', render); });
+  render();
+})();
+</script>
